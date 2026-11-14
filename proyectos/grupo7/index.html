@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muestra Institucional 2026 - Trivia de videojuegos</title>
+<style>
+:root{color-scheme:dark;--bg:#070914;--panel:#101326;--panel2:#171c34;--text:#f1f3ff;--muted:#9da8c7;--line:#33395b;--accent:#9d7bff;--accent2:#5ce1e6;--good:#61e6a7;--bad:#ff7188;--gold:#ffce69;--body1:#080a16;--body2:#101326;--silhouette-bg:#b8c4df;--pixel:'Courier New',Consolas,monospace;--mono:Consolas,'Courier New',monospace}
+:root[data-theme="light"]{color-scheme:light;--bg:#e9edfa;--panel:#f8f9ff;--panel2:#e9edfc;--text:#191b35;--muted:#646b8c;--line:#c7cce4;--accent:#6746d7;--accent2:#087f91;--good:#12845e;--bad:#ca3a55;--gold:#9b6600;--body1:#e9edfa;--body2:#dce2f4;--silhouette-bg:#dce4f7}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 55%),linear-gradient(135deg,var(--body1),var(--body2));color:var(--text);font-family:var(--mono);display:grid;place-items:center;padding:26px;position:relative;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background:repeating-linear-gradient(0deg,transparent 0 3px,#a4b7ff 4px,transparent 5px);z-index:10;mix-blend-mode:soft-light}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#99a3ff0a 1px,transparent 1px),linear-gradient(90deg,#99a3ff0a 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+button,input{font:inherit}
+.shell{position:relative;z-index:1;width:min(1400px,100%);background:linear-gradient(155deg,color-mix(in srgb,var(--panel) 96%,white 4%),var(--panel));border:1px solid #7064b8;border-radius:8px;padding:clamp(20px,4vw,38px);box-shadow:0 0 0 5px #111329,0 0 0 6px #32365e,0 30px 100px #0009,0 0 55px #8062ff22;overflow:hidden}
+.shell:before{content:"";position:absolute;inset:9px;border:1px solid color-mix(in srgb,var(--accent2) 25%,transparent);pointer-events:none;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:30px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.top-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.game-fact{margin-top:14px;padding:14px 15px;background:#070b1c66;border:1px dashed #6a629a;border-radius:4px}
+.game-fact span{display:block;color:var(--gold);font-family:var(--pixel);font-size:8px;line-height:1.8;margin-bottom:9px}
+.game-fact p{margin:0;color:var(--text);font-size:12px;line-height:1.55}
+.brand{display:flex;align-items:center;gap:15px}
+h1{font-family:var(--pixel);font-size:clamp(12px,1.85vw,19px);margin:0;line-height:1.7;letter-spacing:.03em;color:var(--text);text-shadow:3px 3px 0 #5543a755,0 0 17px #9d7bff66}
+.kicker{color:var(--accent2);font-family:var(--pixel);font-size:8px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:9px;line-height:1.8}
+.iconbtn,.mainbtn,.hintbtn,.option{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:4px;cursor:pointer;transition:.18s}
+.iconbtn{padding:10px 13px;font-family:var(--pixel);font-size:9px}
+.sound-control{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--line);background:var(--panel2);border-radius:4px}
+.sound-control button{border:0;background:transparent;color:var(--accent2);font-family:var(--pixel);font-size:8px;cursor:pointer;white-space:nowrap}
+.sound-control input{width:88px;accent-color:var(--accent2);cursor:pointer}
+.sound-control small{font-size:8px;color:var(--muted);font-family:var(--pixel)}
+.mode-heading{font-family:var(--pixel);font-size:11px;letter-spacing:.1em;color:var(--gold);text-shadow:0 0 12px #ffce6955;margin:25px 0 12px}
+.mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:13px;max-width:1100px;margin:15px auto 0;text-align:left}
+.mode-card{min-height:230px;padding:12px;overflow:hidden;border-radius:7px;border:1px solid var(--line);background:linear-gradient(155deg,var(--modeTint,#1a2040),var(--panel) 62%);display:flex;flex-direction:column;gap:8px;position:relative;color:var(--text);cursor:pointer;transition:.18s}
+.mode-card:after{content:"";position:absolute;inset:auto -30px -38px auto;width:110px;height:110px;border-radius:50%;background:var(--modeGlow,#5ce1e6);filter:blur(36px);opacity:.16;pointer-events:none}
+.mode-card[data-mode="covers"]{--modeTint:#142849;--modeGlow:#40cfff;--modeColor:#5ce1e6}
+.mode-card[data-mode="silhouettes"]{--modeTint:#123022;--modeGlow:#62f08c;--modeColor:#72f2a0}
+.mode-card[data-mode="archive"]{--modeTint:#3a2a13;--modeGlow:#ffc34b;--modeColor:#ffce69}
+.mode-card[data-mode="bomb"]{--modeTint:#3a1725;--modeGlow:#ff536a;--modeColor:#ff7188}
+.mode-card.active{border-color:var(--modeColor);box-shadow:0 0 22px color-mix(in srgb,var(--modeColor) 28%,transparent),inset 0 0 28px color-mix(in srgb,var(--modeColor) 8%,transparent);transform:translateY(-3px)}
+.mode-card:hover{border-color:var(--accent2);transform:translateY(-2px)}
+.mode-card .mode-art{height:110px;border:1px solid color-mix(in srgb,var(--modeColor) 55%,var(--line));border-radius:4px;background:linear-gradient(130deg,color-mix(in srgb,var(--modeColor) 16%,transparent),#080b1c);display:grid;place-items:center;color:var(--modeColor);font-size:35px;text-shadow:0 0 16px var(--modeColor);letter-spacing:5px}
+.mode-illustration{display:block;width:100%;height:100%;object-fit:cover;border-radius:4px}
+.mode-card b{font-family:var(--pixel);font-size:10px;letter-spacing:.05em;color:var(--modeColor);margin:0}
+.mode-card p{font-size:11px;line-height:1.55;margin:0;color:var(--muted);flex:1}
+.mode-tag{font-family:var(--pixel);font-size:8px;color:var(--modeColor);letter-spacing:.12em}
+.asset-status{max-width:700px;margin:13px auto 0;font-size:10px;line-height:1.7;color:var(--muted)}
+.asset-status strong{color:var(--accent2)}
+.iconbtn:hover,.hintbtn:hover,.option:hover{border-color:var(--accent2);transform:translateY(-2px);box-shadow:3px 3px 0 #0006}
+.intro{text-align:center;padding:26px 8px 14px}
+.intro h2{font-family:var(--pixel);font-size:clamp(22px,3vw,32px);line-height:1.3;margin:12px 0;color:var(--text);text-shadow:2px 2px 0 #5543a755}
+.intro h2.home-title{font-size:clamp(34px,5vw,58px);line-height:1.35;letter-spacing:.035em;margin:22px auto 14px}
+.intro h2.mode-selected{font-size:clamp(22px,3.2vw,38px);line-height:1.45}
+.intro p{color:var(--muted);max-width:670px;margin:14px auto 26px;line-height:1.8;font-size:14px}
+.mainbtn{padding:14px 19px;font-weight:800;background:linear-gradient(110deg,#7055df,#8f5ce8);border:1px solid #b7a0ff;color:#fff;text-transform:uppercase;letter-spacing:.07em;box-shadow:4px 4px 0 #34265e;font-size:13px}
+.mainbtn:hover{filter:brightness(1.12);transform:translate(-1px,-2px);box-shadow:6px 6px 0 #34265e}
+.mainbtn:disabled,.hintbtn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.message{min-height:22px;color:var(--bad);font-size:13px;margin:10px auto 0}
+.ranking{max-width:680px;margin:34px auto 4px;text-align:left;background:linear-gradient(145deg,var(--panel2),color-mix(in srgb,var(--panel2) 70%,#090b1b));border:1px solid var(--line);border-top:2px solid var(--gold);border-radius:5px;padding:20px;box-shadow:inset 0 1px #ffffff0a}
+.ranking-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.ranking h3{font-family:var(--pixel);font-size:10px;line-height:1.8;margin:0;color:var(--gold)}
+.ranking small{color:var(--muted);font-size:11px}
+.ranking-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+.ranking-tab{border:1px solid var(--line);border-radius:4px;background:var(--panel2);color:var(--muted);font:700 9px var(--pixel);letter-spacing:.06em;padding:9px 11px;cursor:pointer;transition:all .15s}
+.ranking-tab:hover,.ranking-tab:focus-visible{border-color:var(--accent2);color:var(--text);outline:none}
+.ranking-tab.active{border-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 14%,var(--panel2));color:var(--accent2);box-shadow:inset 0 -2px var(--accent2)}
+.ranking table{width:100%;border-collapse:collapse;font-size:12px}
+.ranking th,.ranking td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}
+.ranking th{color:var(--accent2);font-size:9px;text-transform:uppercase;letter-spacing:.1em}
+.ranking tr:last-child td{border-bottom:0}
+.ranking td:nth-child(2){max-width:180px;overflow-wrap:anywhere}
+.ranking td.points,.ranking th.points{text-align:right;font-variant-numeric:tabular-nums;color:var(--gold)}
+.empty-ranking{color:var(--muted);font-size:13px;padding:10px 0}
+.hud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:23px}
+.stat{background:linear-gradient(135deg,var(--panel2),#111529);border:1px solid var(--line);border-left:2px solid var(--accent);padding:12px 13px;border-radius:4px;font-weight:750;font-size:13px;box-shadow:inset 0 1px #ffffff08}
+.stat span{display:block;color:var(--muted);font-weight:500;font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.stat b{font-family:var(--pixel);font-size:11px;color:var(--accent2)}
+.game-layout{display:grid;grid-template-columns:minmax(360px,1fr) minmax(0,1.04fr);gap:clamp(24px,2.8vw,38px);align-items:start;max-width:1360px;margin:0 auto}
+.visual-column{min-width:0}
+.play-column{min-width:0;padding-top:4px}
+.prompt{text-align:left;font-family:var(--pixel);font-size:clamp(11px,1.7vw,15px);line-height:1.8;font-weight:800;margin:4px 0 22px}
+.cover-frame{position:relative;width:min(330px,100%);aspect-ratio:2/3;margin:0 auto 17px;background:#090c1c;border:2px solid #5f5997;border-radius:5px;overflow:hidden;box-shadow:0 0 0 5px #111329,0 0 0 6px #403a70,0 18px 50px #0008,0 0 34px #8871ff22;isolation:isolate}
+.cover-frame:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,#ffffff13,transparent 25%,transparent 70%,#5ce1e60c);z-index:4}
+.cover-pixel,.cover-lens{position:absolute;inset:0;width:100%;height:100%;display:block;user-select:none;-webkit-user-drag:none}
+.cover-pixel{object-fit:fill;image-rendering:pixelated;image-rendering:crisp-edges;filter:brightness(.78) saturate(.58) contrast(1.12);transition:filter .25s}
+.cover-lens{display:none!important}
+.cover-frame.revealed .cover-pixel{filter:none;image-rendering:auto}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.option{text-align:left;padding:16px 17px;font-weight:700;min-height:60px;font-size:13px;line-height:1.5;position:relative}
+.option:before{content:"▶";font-size:9px;color:var(--accent2);margin-right:10px}
+.option:disabled{cursor:default;opacity:.93;transform:none;box-shadow:none}
+.option.correct{border-color:var(--good);background:color-mix(in srgb,var(--good) 15%,var(--panel2));box-shadow:inset 3px 0 var(--good)}
+.option.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 13%,var(--panel2));box-shadow:inset 3px 0 var(--bad)}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--line)}
+.status{color:var(--muted);font-size:12px;min-height:22px;line-height:1.6}
+.actions{display:flex;gap:9px}
+.hintbtn{padding:12px 15px;font-weight:800;font-size:12px}
+.character-frame{position:relative;width:min(330px,100%);aspect-ratio:2/3;margin:0 auto 17px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel);display:grid;place-items:center}
+.character-frame img{position:relative;z-index:0;width:100%;height:100%;object-fit:contain;padding:8px;transition:opacity .28s ease}
+.character-caption{position:absolute;left:0;right:0;bottom:0;padding:11px;background:#080a16e8;color:var(--gold);font-family:var(--pixel);font-size:9px;text-align:center;letter-spacing:.08em}
+.character-clue{position:absolute;left:12px;right:12px;bottom:46px;padding:10px 11px;background:#080a16dd;border-left:2px solid var(--accent2);color:var(--text);font-size:11px;line-height:1.55;text-align:center;min-height:32px}
+.archive-panel{width:min(470px,100%);min-height:340px;margin:0 auto 17px;padding:clamp(22px,4vw,34px);border:1px solid #7567a9;border-radius:5px;background:linear-gradient(145deg,#11172d,#090d1d);box-shadow:inset 0 0 35px #8b70ff12,0 0 30px #8b70ff10;display:flex;flex-direction:column;justify-content:center;text-align:left}
+.archive-stamp{align-self:flex-start;padding:7px 10px;border:1px solid var(--bad);color:var(--bad);font-family:var(--pixel);font-size:8px;letter-spacing:.1em;transform:rotate(-2deg);margin-bottom:28px}
+.archive-title{font-family:var(--pixel);font-size:clamp(12px,2vw,17px);line-height:1.8;color:var(--gold);margin-bottom:12px}
+.archive-code{font-size:10px;letter-spacing:.12em;color:var(--muted);margin-bottom:26px}
+.archive-code span{color:var(--accent2)}
+.archive-panel p{font-size:13px;line-height:1.9;color:var(--text);padding:17px;border-left:2px solid var(--accent2);background:#5ce1e60b;min-height:85px;margin:0}
+.game-info{margin:0 auto;max-width:100%;background:linear-gradient(120deg,var(--panel2),var(--panel));border:1px solid var(--line);border-left:3px solid var(--accent2);padding:17px 18px;border-radius:4px}
+.game-info-title{font-family:var(--pixel);font-size:9px;color:var(--accent2);line-height:1.8;margin-bottom:12px}
+.game-info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.info-item span{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px}
+.info-item b{font-size:12px;line-height:1.5;color:var(--text)}
+.arcade-end{max-width:660px;margin:10px auto 0;background:linear-gradient(145deg,#10162b,#171631);border:1px solid #61549c;box-shadow:inset 0 0 35px #8b70ff12,0 0 26px #8b70ff13;padding:clamp(20px,4vw,32px);border-radius:5px}
+.score-total{font-family:var(--pixel);font-size:clamp(24px,6vw,42px);color:var(--gold);text-shadow:3px 3px 0 #553d17,0 0 20px #ffce6955;margin:17px 0}
+.player-name-form{margin:25px auto 12px;max-width:370px;padding:19px;border:1px dashed #6e68a6;background:#090d1d88}
+.player-name-form label{display:block;font-family:var(--pixel);font-size:8px;color:var(--accent2);line-height:1.9;margin-bottom:15px}
+.player-name-input{width:min(100%,340px);padding:13px 15px;text-align:center;font-family:var(--mono);font-size:16px;font-weight:700;background:var(--bg);color:var(--gold);border:2px solid var(--accent2);border-radius:3px;outline:none}
+.end-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.note{color:#7e86a9;font-size:10px;text-align:center;margin-top:25px;letter-spacing:.08em}
+.hidden{display:none!important}
+.bomb-mode-chooser{max-width:760px;margin:14px auto 4px;padding:14px;border:1px solid #8f334d;border-radius:6px;background:linear-gradient(145deg,#241526,#171326);text-align:left}
+.bomb-chooser-title{font-family:var(--pixel);font-size:9px;letter-spacing:.08em;color:#ff9eaa;margin:0 0 10px;text-align:center}
+.bomb-chooser-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bomb-choice{display:flex;flex-direction:column;gap:7px;text-align:left;padding:12px;border:1px solid #704057;border-radius:5px;background:linear-gradient(145deg,#33213a,#20182d);color:var(--text);cursor:pointer}
+.bomb-choice b{font-family:var(--pixel);font-size:9px;color:#ff9eaa}
+.bomb-choice span{font-size:10px;line-height:1.5;color:var(--muted)}
+.bomb-choice.active{border-color:#ff7188;box-shadow:0 0 16px #ff536a30,inset 0 0 18px #ff536a12}
+.credits-panel{max-width:1120px;margin:22px auto 0;display:grid;grid-template-columns:1.3fr 1.15fr .9fr 1.15fr;gap:0;border:1px solid var(--line);background:linear-gradient(100deg,#11162b,#171a32);border-radius:5px;overflow:hidden}
+.credit-cell{padding:14px 16px;border-right:1px solid var(--line);font-size:12px;line-height:1.7;color:var(--muted)}
+.credit-cell:last-child{border-right:0}
+.credit-cell strong{display:block;color:var(--accent2);font-family:var(--pixel);font-size:9px;margin-bottom:6px;letter-spacing:.07em}
+.credit-cell b{color:var(--text);font-weight:700;font-size:12px}
+.bomb-panel{max-width:820px;margin:0 auto;padding:18px;border:1px solid #8f334d;border-radius:6px;background:radial-gradient(circle at 50% 20%,#4c1e36,#151323 65%);text-align:center;box-shadow:inset 0 0 24px #ff335522,0 0 20px #ff335511}
+.bomb-device{width:min(760px,100%);min-height:150px;margin:0 auto 12px;padding:24px 22px 12px;border:3px solid #8992a7;border-radius:16px;background:linear-gradient(145deg,#4a5265,#191f32);position:relative;box-shadow:inset 0 -8px 0 #0b0e18,0 8px 0 #080a12}
+.bomb-device:before,.bomb-device:after{content:"";position:absolute;top:-14px;width:8px;height:18px;background:#cf374a;border-radius:4px}
+.bomb-device:before{left:35px;transform:rotate(-18deg)}
+.bomb-device:after{right:35px;transform:rotate(18deg)}
+.bomb-display-row{display:flex;gap:12px;align-items:stretch;justify-content:center;min-width:0;width:100%}
+.bomb-screen{min-height:66px;padding:12px 14px;background:#130c14;border:2px solid #6f263f;color:#ff536a;font-family:var(--pixel);text-shadow:0 0 10px #ff536a;letter-spacing:2px}
+.bomb-word-screen{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:9px 12px}
+.bomb-word{flex:1 1 auto;width:100%;min-width:0;display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;white-space:pre;overflow-x:auto;overflow-y:hidden;gap:2px;margin:0;font-size:clamp(10px,1.8vw,20px);color:#ff9eaa}
+.bomb-word span{flex:0 0 auto;min-width:0!important;line-height:1.4}
+.bomb-timer-screen{flex:0 0 126px;display:grid;place-items:center;font-size:16px;color:#ffce69;border-color:#986d32;text-shadow:0 0 10px #ffce69}
+.bomb-lives{font-family:var(--pixel);font-size:8px;color:#ffce69;letter-spacing:.12em;margin:0 auto;line-height:1.5;text-align:center}
+.bomb-instruction{color:var(--muted);font-size:11px;line-height:1.5;margin:0 auto;max-width:560px}
+.bomb-keyboard{display:flex;flex-direction:column;align-items:center;gap:7px;margin:16px auto 0;width:min(100%,550px)}
+.bomb-key-row{display:flex;justify-content:center;gap:5px;width:100%}
+.bomb-key-row:nth-child(2){padding:0 3%}.bomb-key-row:nth-child(3){padding:0 7%}.bomb-key-row:nth-child(4){padding:0 14%}
+.bomb-key{flex:1 1 0;max-width:48px;min-width:0;min-height:43px;padding:8px 2px;border:1px solid #704057;background:linear-gradient(180deg,#33283c,#211b30);color:var(--text);border-radius:5px;font-weight:800;cursor:pointer;font-size:12px;box-shadow:0 3px 0 #090b16}
+.bomb-key-row:first-child .bomb-key{min-height:32px;font-size:10px;background:linear-gradient(180deg,#252d3e,#151a28);color:#ffcfda}
+.bomb-key:hover:not(:disabled){background:#602d48;border-color:#ff7188;transform:translateY(-1px)}
+.bomb-key:disabled{opacity:.25;cursor:default;box-shadow:none;transform:none}
+.bomb-panel.exploded .bomb-device{animation:bombShake .5s ease-in-out 2}
+.bomb-panel.exploded .bomb-screen{color:#fff;background:#a51f35}
+@keyframes bombShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px) rotate(-3deg)}40%{transform:translateX(8px) rotate(3deg)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+.game-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.game-toolbar-label{font-family:var(--pixel);font-size:8px;color:var(--muted);letter-spacing:.1em}
+.leave-game-btn{font-family:var(--pixel);font-size:8px;padding:9px 12px;border-color:#63558f;color:var(--accent2);white-space:nowrap}
+.confirm-overlay{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:18px;background:#050611d9;backdrop-filter:blur(5px)}
+.confirm-box{width:min(480px,100%);padding:25px;border:1px solid #8d70e9;border-radius:7px;background:linear-gradient(145deg,#171a35,#090d1d);box-shadow:0 0 0 5px #12142a,0 0 48px #8b70ff40;text-align:center}
+.confirm-box h2{font-family:var(--pixel);font-size:clamp(13px,2vw,19px);color:var(--gold);line-height:1.6;margin:18px 0}
+.confirm-box p{font-size:13px;line-height:1.7;color:var(--muted)}
+.confirm-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.confirm-actions button{min-width:145px}
+@media(max-width:900px){.game-layout{grid-template-columns:1fr;gap:12px}.prompt{text-align:center;margin:18px 0}}
+@media(max-width:620px){.answers{grid-template-columns:1fr}.hud{grid-template-columns:repeat(2,minmax(0,1fr))}.credits-panel{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="top">
+    <div class="brand"><div><div class="kicker">MUESTRA INSTITUCIONAL 2026</div><h1>TRIVIA DE VIDEOJUEGOS</h1></div></div>
+    <div class="top-actions">
+      <div class="sound-control" aria-label="Controles de musica">
+        <button id="soundToggle" type="button" aria-pressed="false" title="Silenciar o activar musica">♫ MUTE</button>
+        <small>VOL</small>
+        <input id="musicVolume" type="range" min="0" max="100" value="28" aria-label="Volumen de musica">
+      </div>
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="Cambiar tema" title="Cambiar tema">◐ TEMA</button>
+    </div>
+  </header>
+  <audio id="backgroundMusic" preload="none"></audio>
+
+  <section id="intro" class="intro">
+    <div class="kicker">ARCADE SYSTEM // PLAYER 1 READY</div>
+    <h2 id="introTitle" class="home-title">TRIVIA DE<br>VIDEOJUEGOS</h2>
+    <p id="introDescription">Elegí uno de los cuatro juegos para comenzar. Cada modalidad tiene su propio desafío y ranking.</p>
+    <div class="mode-heading">✦ ELEGÍ TU DESAFIO ✦</div>
+    <div class="mode-grid">
+      <button class="mode-card" type="button" data-mode="covers"><div class="mode-art"><img class="mode-illustration" src="assets/modos/portadas.svg" alt="" aria-hidden="true"></div><b>01 // PORTADAS</b><p>Reconocé videojuegos a partir de sus portadas pixeladas.</p><span class="mode-tag">15 RONDAS · DISPONIBLE</span></button>
+      <button class="mode-card" type="button" data-mode="silhouettes"><div class="mode-art"><img class="mode-illustration" src="assets/modos/siluetas.svg" alt="" aria-hidden="true"></div><b>02 // SILUETAS</b><p>Adiviná personajes por su contorno, pose y accesorios.</p><span class="mode-tag">20 RONDAS · DISPONIBLE</span></button>
+      <button class="mode-card" type="button" data-mode="archive"><div class="mode-art"><img class="mode-illustration" src="assets/modos/archivo.svg" alt="" aria-hidden="true"></div><b>03 // TRAMA</b><p>Reconocé el videojuego a partir de su trama, personajes y acontecimientos.</p><span class="mode-tag">15 RONDAS · DISPONIBLE</span></button>
+      <button class="mode-card" type="button" data-mode="bomb"><div class="mode-art"><img class="mode-illustration" src="assets/modos/bomba.svg" alt="" aria-hidden="true"></div><b>04 // BOMBA</b><p>Descifrá el nombre del videojuego letra por letra. Elegí la dificultad antes de empezar.</p><span class="mode-tag">ELEGÍ TU MODALIDAD</span></button>
+    </div>
+    <div id="bombModeChooser" class="bomb-mode-chooser hidden" aria-label="Elegir modalidad de bomba">
+      <div class="bomb-chooser-title">ELEGÍ CÓMO QUERÉS JUGAR</div>
+      <div class="bomb-chooser-options">
+        <button type="button" class="bomb-choice" data-bomb-mode="bomb"><b>BOMBA CLÁSICA</b><span>10 rondas · Sin límite de tiempo · 6 oportunidades</span></button>
+        <button type="button" class="bomb-choice" data-bomb-mode="bomb_timed"><b>BOMBA CONTRARRELOJ</b><span>5 rondas · 60 segundos por título</span></button>
+      </div>
+    </div>
+    <div style="margin:20px auto 4px;color:var(--gold);font-family:var(--pixel);font-size:9px;line-height:2">INSERT COIN&nbsp; · &nbsp;PRESS START</div>
+    <button class="mainbtn" id="startBtn" disabled>Elegí un juego para comenzar</button>
+    <div class="message" id="introMessage" role="status"></div>
+    <div class="asset-status">MODO STANDALONE HTML5 // RANKING GUARDADO EN NAVEGADOR</div>
+    <section class="credits-panel" aria-label="Creditos del proyecto">
+      <div class="credit-cell"><strong>INSTITUCION</strong><b>Escuela de Educación Secundaria Técnica N.º 2 “Ingeniero César Cipolletti”</b><br>Azara 1250 · Bahía Blanca</div>
+      <div class="credit-cell"><strong>DESARROLLADO POR</strong><b>Maximiliano Xavier Ugarnes</b><br><b>Luciano Javier Trebucq</b></div>
+      <div class="credit-cell"><strong>CURSO / GRUPO</strong><b>6.º 5.ª — Informática</b><br>Grupo B</div>
+      <div class="credit-cell"><strong>MATERIA / DOCENTE</strong><b>Laboratorio de Aplicaciones</b><br>Profesora: <b id="teacherName">Neli Cabullan</b></div>
+    </section>
+    <section class="ranking" aria-labelledby="rankingTitle">
+      <div class="ranking-head"><h3 id="rankingTitle">Mejores puntuaciones</h3><small>Top 10 · por modalidad</small></div>
+      <div class="ranking-tabs" role="tablist" aria-label="Elegir ranking">
+        <button type="button" class="ranking-tab active" data-ranking-mode="covers">PORTADAS</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="silhouettes">SILUETAS</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="archive">TRAMA</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="bomb">BOMBA</button>
+      </div>
+      <div id="rankingContent"><div class="empty-ranking">Cargando ranking…</div></div>
+    </section>
+  </section>
+
+  <section id="game" class="hidden">
+    <div class="game-toolbar"><span class="game-toolbar-label">ARCADE SESSION // EN CURSO</span><button class="hintbtn leave-game-btn" id="leaveGameBtn" type="button">← VOLVER AL MENU</button></div>
+    <div class="hud">
+      <div class="stat"><span>Modo</span><b id="modeStat">PORTADAS</b></div>
+      <div class="stat"><span>Puntos</span><b id="score">0</b></div>
+      <div class="stat"><span>Ronda</span><b id="round">1 / 15</b></div>
+      <div class="stat"><span>Valor</span><b id="value">— pts</b></div>
+    </div>
+    <div class="game-layout">
+      <div class="visual-column">
+        <div class="cover-frame" id="coverFrame" data-reveal="0">
+          <canvas class="cover-pixel" id="coverPixel" role="img" aria-label="Portada de videojuego pixelada"></canvas>
+          <img class="cover-lens" id="coverLens" src="" alt="Ventana de escaneo">
+        </div>
+        <div class="character-frame hidden" id="silhouetteFrame">
+          <img id="silhouetteImage" src="" alt="Silueta negra de un personaje de videojuego">
+          <div class="character-clue hidden" id="silhouetteClue"></div>
+          <div class="character-caption" id="characterCaption">PERSONAJE OCULTO</div>
+        </div>
+        <div class="bomb-panel hidden" id="bombPanel">
+          <div class="bomb-device" id="bombDevice">
+            <div class="bomb-display-row">
+              <div class="bomb-screen bomb-word-screen">
+                <div class="bomb-lives" id="bombLives">OPORTUNIDADES: 6 / 6</div>
+                <div class="bomb-word" id="bombWord" aria-live="polite">_ _ _ _ _</div>
+              </div>
+              <div class="bomb-screen bomb-timer-screen hidden" id="bombScreen">01:00</div>
+            </div>
+          </div>
+          <p class="bomb-instruction" id="bombInstruction">Adiviná el nombre del videojuego. Cada letra incorrecta consume una oportunidad.</p>
+          <div class="bomb-keyboard" id="bombKeyboard"></div>
+        </div>
+        <div class="archive-panel hidden" id="archivePanel">
+          <div class="archive-stamp">DOSSIER // TRAMA DEL JUEGO</div>
+          <div class="archive-title">TRAMA DEL VIDEOJUEGO</div>
+          <div class="archive-code">EXPEDIENTE Nº <span id="archiveCode">----</span></div>
+          <p id="modeClue">La primera pista aparecera al iniciar la ronda.</p>
+        </div>
+        <section class="game-info hidden" id="gameInfo" aria-live="polite">
+          <div class="game-info-title">◈ FICHA DEL VIDEOJUEGO</div>
+          <div class="game-info-grid">
+            <div class="info-item"><span>Lanzamiento</span><b id="infoYear">—</b></div>
+            <div class="info-item"><span>Genero</span><b id="infoGenre">—</b></div>
+            <div class="info-item"><span>Desarrollador</span><b id="infoStudio">—</b></div>
+            <div class="info-item"><span>Plataformas</span><b id="infoPlatforms">—</b></div>
+            <div class="info-item"><span>Multijugador</span><b id="infoMultiplayer">—</b></div>
+          </div>
+          <div class="game-fact"><span>✦ DATO CURIOSO</span><p id="infoFact">—</p></div>
+        </section>
+      </div>
+      <div class="play-column">
+        <div class="prompt" id="gamePrompt">¿De que videojuego es esta portada?</div>
+        <div class="answers" id="answers"></div>
+        <div class="controls">
+          <div class="status" id="status">Elegi una respuesta o activa el escaner.</div>
+          <div class="actions">
+            <button class="hintbtn" id="hintBtn" type="button">Escanear −1</button>
+            <button class="mainbtn" id="nextBtn" type="button" disabled>Siguiente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="end" class="intro hidden">
+    <div class="arcade-end">
+      <div class="kicker">GAME OVER // SESSION COMPLETE</div>
+      <h2>RESULTADO FINAL</h2>
+      <div class="score-total" id="finalScore">0 / 100.000</div>
+      <p id="finalSummary">Terminaste la partida.</p>
+      <div class="player-name-form" id="playerNameForm">
+        <label for="playerName">NEW HIGH SCORE?<br>ENTER YOUR NAME OR NICKNAME</label>
+        <input class="player-name-input" id="playerName" type="text" maxlength="20" minlength="2" autocomplete="nickname" placeholder="Tu nombre o apodo">
+        <div class="message" id="saveMessage" role="status"></div>
+        <div style="margin-top:15px"><button class="mainbtn" id="saveScoreBtn" type="button">Guardar record</button></div>
+      </div>
+      <div class="message hidden" id="savedMessage" role="status"></div>
+      <div class="end-actions">
+        <button class="hintbtn" id="homeBtn" type="button">Volver al menu</button>
+        <button class="mainbtn" id="againBtn" type="button">Jugar otra vez</button>
+      </div>
+    </div>
+    <section class="ranking" aria-labelledby="endRankingTitle">
+      <div class="ranking-head"><h3 id="endRankingTitle">HALL OF FAME</h3><small>Top 10</small></div>
+      <div class="ranking-tabs" role="tablist" aria-label="Elegir ranking">
+        <button type="button" class="ranking-tab active" data-ranking-mode="covers">PORTADAS</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="silhouettes">SILUETAS</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="archive">TRAMA</button>
+        <button type="button" class="ranking-tab" data-ranking-mode="bomb">BOMBA</button>
+      </div>
+      <div id="endRankingContent"><div class="empty-ranking">Cargando ranking…</div></div>
+    </section>
+  </section>
+  <div class="note">MUESTRA INSTITUCIONAL 2026 // STANDALONE HTML EDITION</div>
+  <div class="confirm-overlay hidden" id="leaveConfirm" role="alertdialog" aria-modal="true">
+    <div class="confirm-box">
+      <div class="kicker">ARCADE SYSTEM // CONFIRMACION</div>
+      <h2>¿ABANDONAR PARTIDA?</h2>
+      <p>Si volves al menu ahora, perderas el progreso de esta partida y la puntuacion que todavia no hayas guardado.</p>
+      <div class="confirm-actions"><button class="hintbtn" id="stayInGameBtn" type="button">SEGUIR JUGANDO</button><button class="mainbtn" id="confirmLeaveBtn" type="button">ABANDONAR</button></div>
+    </div>
+  </div>
+</main>
+
+<script>
+// ============================================================================
+// BASE DE DATOS LOCAL (Reemplaza a los arreglos de PHP)
+// ============================================================================
+const GAMES_DB = [
+  {id:70, name:'Half-Life', year:'1998', genre:'FPS', studio:'Valve', fact:'Primer videojuego publicado por Valve.'},
+  {id:220, name:'Half-Life 2', year:'2004', genre:'FPS', studio:'Valve', fact:'Introdujo la pistola gravitatoria.'},
+  {id:400, name:'Portal', year:'2007', genre:'Puzles', studio:'Valve', fact:'Nació de un proyecto universitario llamado Narbacular Drop.'},
+  {id:620, name:'Portal 2', year:'2011', genre:'Puzles', studio:'Valve', fact:'Incluye campaña cooperativa con ATLAS y P-body.'},
+  {id:12120, name:'Grand Theft Auto: San Andreas', year:'2004', genre:'Mundo abierto', studio:'Rockstar North', fact:'Conecta Los Santos, San Fierro y Las Venturas.'},
+  {id:271590, name:'Grand Theft Auto V', year:'2013', genre:'Mundo abierto', studio:'Rockstar North', fact:'Permite alternar entre Michael, Franklin y Trevor.'},
+  {id:1174180, name:'Red Dead Redemption 2', year:'2018', genre:'Mundo abierto', studio:'Rockstar Studios', fact:'Su banda sonora cuenta con cerca de 190 piezas.'},
+  {id:292030, name:'The Witcher 3: Wild Hunt', year:'2015', genre:'RPG', studio:'CD Projekt Red', fact:'El minijuego Gwent se volvió un título independiente.'},
+  {id:1091500, name:'Cyberpunk 2077', year:'2020', genre:'RPG', studio:'CD Projekt Red', fact:'Keanu Reeves interpreta a Johnny Silverhand.'},
+  {id:1245620, name:'Elden Ring', year:'2022', genre:'RPG de acción', studio:'FromSoftware', fact:'Mitología coescrita con George R. R. Martin.'},
+  {id:1593500, name:'God of War', year:'2018', genre:'Acción / aventura', studio:'Santa Monica Studio', fact:'Presentado en un único plano secuencia sin cortes.'},
+  {id:367520, name:'Hollow Knight', year:'2017', genre:'Metroidvania', studio:'Team Cherry', fact:'Financiado parcialmente mediante Kickstarter.'},
+  {id:413150, name:'Stardew Valley', year:'2016', genre:'Simulación / RPG', studio:'ConcernedApe', fact:'Desarrollado casi en su totalidad por Eric Barone.'},
+  {id:391540, name:'Undertale', year:'2015', genre:'RPG', studio:'Toby Fox', fact:'Permite superar encuentros sin derrotar enemigos.'},
+  {id:99998803, name:'Minecraft', year:'2011', genre:'Sandbox', studio:'Mojang', fact:'Generación procedural de mundos por bloques.'}
+  // Podés agregar el resto de tus juegos manteniendo este formato.
+];
+
+const SILHOUETTES_DB = [
+  {id:'mario', name:'Mario', game:'Super Mario', image:'assets/siluetas/generated/mario.png', colorImage:'assets/siluetas/color/mario.png', clues:['Es el personaje insignia de una compañía japonesa.','Su silueta incluye una gorra de visera y bigote.','Es un fontanero que viaja con su hermano Luigi.'], details:{year:'1981', genre:'Plataformas', studio:'Nintendo', platforms:'Consolas Nintendo', multiplayer:'Depende de la entrega', fact:'Debutó como Jumpman en Donkey Kong.'}},
+  {id:'sonic', name:'Sonic', game:'Sonic the Hedgehog', image:'assets/siluetas/generated/sonic.png', colorImage:'assets/siluetas/color/sonic.png', clues:['Mascota de SEGA en los años 90.','Tiene largas púas hacia atrás y zapatillas grandes.','Corre a velocidad extrema recolectando anillos.'], details:{year:'1991', genre:'Plataformas', studio:'Sonic Team', platforms:'Multiplataforma', multiplayer:'Depende de la entrega', fact:'Ícono de la era de 16 bits.'}},
+  {id:'crash', name:'Crash Bandicoot', game:'Crash Bandicoot', image:'assets/siluetas/generated/crash.png', colorImage:'assets/siluetas/color/crash.png', clues:['Mascota de plataformas nacida en PlayStation.','Hocico alargado, orejas puntiagudas y pelo en picos.','Ataca girando y enfrenta al Dr. Neo Cortex.'], details:{year:'1996', genre:'Plataformas', studio:'Naughty Dog', platforms:'Multiplataforma', multiplayer:'No', fact:'Creado por Naughty Dog para PS1.'}},
+  {id:'kratos', name:'Kratos', game:'God of War', image:'assets/siluetas/generated/kratos.png', colorImage:'assets/siluetas/color/kratos.png', clues:['Guerrero de una saga de acción mitológica.','Cabeza calva, barba marcada y cuerpo robusto.','Comenzó en Grecia y luego viajó a tierras nórdicas.'], details:{year:'2005', genre:'Acción', studio:'Santa Monica Studio', platforms:'PlayStation / PC', multiplayer:'No', fact:'Comparte protagonismo con su hijo Atreus en la etapa nórdica.'}},
+  {id:'link', name:'Link', game:'The Legend of Zelda', image:'assets/siluetas/generated/link.png', colorImage:'assets/siluetas/color/link.png', clues:['Héroe de aventura y fantasía de Nintendo.','Orejas puntiagudas, espada, escudo y gorro.','Aventuras en Hyrule para proteger a Zelda.'], details:{year:'1986', genre:'Acción / aventura', studio:'Nintendo', platforms:'Consolas Nintendo', multiplayer:'No', fact:'Muchos confunden su nombre con el de la princesa Zelda.'}}
+  // Agregá aquí el resto de tus personajes (se requieren al menos 20 para partidas sin repetición, o el sistema reciclará si hay menos).
+];
+
+const ARCHIVE_DB = [
+  {id:'hl2', name:'Half-Life 2', year:'2004', studio:'Valve', platforms:'PC', multiplayer:'No', genre:'FPS / ciencia ficción', lore:'Un físico con una palanca despierta en una ciudad ocupada por una fuerza alienígena.', fact:'Integra sus escenas narrativas sin cortar el control del jugador.'},
+  {id:'portal2', name:'Portal 2', year:'2011', studio:'Valve', platforms:'PC, PS3, Xbox 360', multiplayer:'Sí, cooperativo', genre:'Puzles', lore:'Una protagonista despierta dentro de un centro de pruebas controlado por una IA sarcástica.', fact:'Campaña cooperativa con Atlas y P-Body.'},
+  {id:'gtasa', name:'Grand Theft Auto: San Andreas', year:'2004', studio:'Rockstar North', platforms:'PS2, Xbox, PC', multiplayer:'No', genre:'Mundo abierto', lore:'Un joven vuelve a su barrio tras la muerte de su madre para reconstruir su antigua banda.', fact:'Mapa con tres ciudades ficticias.'},
+  {id:'rdr2', name:'Red Dead Redemption 2', year:'2018', studio:'Rockstar Games', platforms:'PS4, Xbox One, PC', multiplayer:'Sí', genre:'Mundo abierto', lore:'Un forajido intenta sobrevivir mientras su banda huye de la ley y de un mundo que cambia.', fact:'Protagonizado por Arthur Morgan.'},
+  {id:'witcher3', name:'The Witcher 3: Wild Hunt', year:'2015', studio:'CD Projekt Red', platforms:'Multiplataforma', multiplayer:'No', genre:'RPG', lore:'Un cazador de monstruos busca a una joven perseguida por una fuerza sobrenatural.', fact:'Protagonizado por Geralt de Rivia.'}
+];
+
+// ============================================================================
+// MOTOR DEL JUEGO EN CLIENTE (Reemplaza a las peticiones fetch/PHP)
+// ============================================================================
+const $ = selector => document.querySelector(selector);
+const formatPoints = value => new Intl.NumberFormat('es-AR').format(Number(value) || 0);
+const BOMB_TIMED_SECONDS = 60;
+
+let gameState = {
+  active: false,
+  mode: 'covers',
+  round: 1,
+  totalRounds: 15,
+  score: 0,
+  hints: 0,
+  usedIds: [],
+  currentEntry: null,
+  bomb: null
+};
+
+let answered = false;
+let selectedMode = null;
+let bombTimerInterval = null;
+let bombLocalDeadline = null;
+let activeRankingMode = 'covers';
+
+const modeLabels = {covers:'PORTADAS', silhouettes:'SILUETAS', archive:'TRAMA', bomb:'BOMBA CLÁSICA', bomb_timed:'BOMBA CONTRARRELOJ'};
+const modeRoundCounts = {covers:15, silhouettes:20, archive:15, bomb:10, bomb_timed:5};
+const isBombMode = mode => mode === 'bomb' || mode === 'bomb_timed';
+const rankingModeFor = mode => isBombMode(mode) ? 'bomb' : (['covers','silhouettes','archive'].includes(mode) ? mode : 'covers');
+const modeIntro = {
+  covers:['DESCIFRÁ UNA PORTADA.','Reconocé el videojuego a partir de una carátula pixelada.'],
+  silhouettes:['RECONOCÉ AL PERSONAJE.','Identificá personajes por su silueta negra; las pistas son opcionales y descuentan puntos.'],
+  archive:['DESCUBRÍ EL JUEGO POR SU TRAMA.','Reconocé el videojuego a partir de su historia, personajes y acontecimientos.'],
+  bomb:['DESACTIVÁ LA BOMBA.','Elegí entre una partida clásica de 10 rondas o una contrarreloj de 5 rondas.'],
+  bomb_timed:['DESACTIVÁ LA BOMBA CONTRARRELOJ.','5 rondas: tenés 60 segundos para descifrar cada título.']
+};
+
+function shuffle(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function roundBasePoints() {
+  const total = gameState.totalRounds;
+  const r = Math.max(1, Math.min(total, gameState.round));
+  return Math.floor(r * 100000 / total) - Math.floor((r - 1) * 100000 / total);
+}
+
+function currentRoundValue() {
+  if (isBombMode(gameState.mode)) {
+    const lives = gameState.bomb ? gameState.bomb.lives : 6;
+    return Math.floor(roundBasePoints() * lives / 6);
+  }
+  if (gameState.mode === 'silhouettes' || gameState.mode === 'archive') {
+    return Math.floor(roundBasePoints() * (4 - Math.min(3, gameState.hints)) / 4);
+  }
+  return Math.floor(roundBasePoints() * (5 - Math.min(4, gameState.hints)) / 5);
+}
+
+function normalizeBombWord(str) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase().replace(/[^A-Z0-9]+/g, " ").trim();
+}
+
+function generateRoundData() {
+  gameState.hints = 0;
+  let pool = gameState.mode === 'silhouettes' ? SILHOUETTES_DB : (gameState.mode === 'archive' ? ARCHIVE_DB : GAMES_DB);
+  let fresh = pool.filter(item => !gameState.usedIds.includes(item.id));
+  if (fresh.length === 0) {
+    gameState.usedIds = [];
+    fresh = pool;
+  }
+  const correct = shuffle(fresh)[0];
+  gameState.usedIds.push(correct.id);
+  gameState.currentEntry = correct;
+
+  if (isBombMode(gameState.mode)) {
+    const word = normalizeBombWord(correct.name);
+    const timed = gameState.mode === 'bomb_timed';
+    gameState.bomb = {
+      word,
+      guessed: [],
+      wrong: [],
+      lives: 6,
+      over: false,
+      solved: false,
+      timed,
+      timeLeft: timed ? BOMB_TIMED_SECONDS : null
+    };
+    return {
+      mode: gameState.mode,
+      round: gameState.round,
+      wordMask: word.replace(/[A-Z0-9]/g, '_'),
+      lives: 6,
+      maxLives: 6,
+      guessed: [],
+      timed,
+      timeLeft: timed ? BOMB_TIMED_SECONDS : null,
+      roundValue: currentRoundValue(),
+      roundOver: false,
+      solved: false
+    };
+  }
+
+  const wrongPool = shuffle(pool.filter(item => item.id !== correct.id)).slice(0, 3);
+  const options = shuffle([correct, ...wrongPool]).map(i => i.name);
+
+  if (gameState.mode === 'covers') {
+    return {
+      mode: 'covers',
+      round: gameState.round,
+      cover: `assets/portadas/${correct.id}.jpg`,
+      options,
+      roundValue: currentRoundValue()
+    };
+  }
+
+  if (gameState.mode === 'silhouettes') {
+    return {
+      mode: 'silhouettes',
+      round: gameState.round,
+      image: correct.image,
+      originalImage: correct.colorImage || correct.image,
+      options,
+      roundValue: currentRoundValue()
+    };
+  }
+
+  if (gameState.mode === 'archive') {
+    const clues = [
+      `Se lanzó en ${correct.year} y pertenece al género ${correct.genre}.`,
+      `Fue desarrollado por ${correct.studio}.`,
+      `Plataformas: ${correct.platforms}. Multijugador: ${correct.multiplayer}.`,
+      `Sobre su historia: ${correct.lore}`
+    ];
+    gameState.currentEntry.generatedClues = clues;
+    return {
+      mode: 'archive',
+      round: gameState.round,
+      initialClue: clues[0],
+      options,
+      roundValue: currentRoundValue()
+    };
+  }
+}
+
+// ============================================================================
+// INTERFAZ Y EVENTOS
+// ============================================================================
+const bombChooser = $('#bombModeChooser');
+document.querySelectorAll('.mode-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const mode = card.dataset.mode;
+    document.querySelectorAll('.mode-card').forEach(item => item.classList.toggle('active', item === card));
+    if (mode === 'bomb') {
+      selectedMode = null;
+      bombChooser.classList.remove('hidden');
+      document.querySelectorAll('[data-bomb-mode]').forEach(option => option.classList.remove('active'));
+      $('#introTitle').classList.remove('home-title');
+      $('#introTitle').classList.add('mode-selected');
+      $('#introTitle').textContent = modeIntro.bomb[0];
+      $('#introDescription').textContent = modeIntro.bomb[1];
+      $('#startBtn').textContent = 'Elegí una modalidad de Bomba';
+      $('#startBtn').disabled = true;
+      loadRanking('bomb');
+      return;
+    }
+    selectedMode = mode;
+    bombChooser.classList.add('hidden');
+    const copy = modeIntro[selectedMode] || modeIntro.covers;
+    $('#introTitle').classList.remove('home-title');
+    $('#introTitle').classList.add('mode-selected');
+    $('#introTitle').textContent = copy[0];
+    $('#introDescription').textContent = copy[1];
+    $('#startBtn').textContent = `Iniciar ${modeLabels[selectedMode]} ▶`;
+    $('#startBtn').disabled = false;
+    loadRanking(rankingModeFor(selectedMode));
+  });
+});
+
+document.querySelectorAll('[data-bomb-mode]').forEach(option => {
+  option.addEventListener('click', () => {
+    selectedMode = option.dataset.bombMode;
+    document.querySelectorAll('[data-bomb-mode]').forEach(item => item.classList.toggle('active', item === option));
+    const copy = modeIntro[selectedMode];
+    $('#introTitle').classList.remove('home-title');
+    $('#introTitle').classList.add('mode-selected');
+    $('#introTitle').textContent = copy[0];
+    $('#introDescription').textContent = copy[1];
+    $('#startBtn').textContent = `Iniciar ${modeLabels[selectedMode]} ▶`;
+    $('#startBtn').disabled = false;
+    loadRanking('bomb');
+  });
+});
+
+function show(section) {
+  ['#intro','#game','#end'].forEach(id => $(id).classList.toggle('hidden', id !== section));
+}
+
+const portraitPixelGrid = [[10, 15], [14, 21], [20, 30], [28, 42], [42, 63], [600, 900]];
+function paintPixelatedCover(level = gameState.hints, fullReveal = false) {
+  const canvas = $('#coverPixel');
+  const image = $('#coverLens');
+  if (!canvas || !image || !image.complete || !image.naturalWidth) return;
+  const grid = portraitPixelGrid[fullReveal ? 5 : Math.max(0, Math.min(4, level))];
+  let width = grid[0];
+  let height = Math.max(1, Math.round(width * image.naturalHeight / image.naturalWidth));
+  canvas.width = width;
+  canvas.height = height;
+  const context = canvas.getContext('2d', { alpha: false });
+  if (!context) return;
+  context.fillStyle = '#10172a';
+  context.fillRect(0, 0, width, height);
+  context.imageSmoothingEnabled = false;
+  const scale = Math.min(width / image.naturalWidth, height / image.naturalHeight);
+  const drawWidth = image.naturalWidth * scale;
+  const drawHeight = image.naturalHeight * scale;
+  context.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
+}
+
+function renderRound(data) {
+  answered = false;
+  $('#modeStat').textContent = modeLabels[data.mode] || 'PORTADAS';
+  $('#coverFrame').classList.add('hidden');
+  $('#silhouetteFrame').classList.add('hidden');
+  $('#archivePanel').classList.add('hidden');
+  $('#bombPanel').classList.add('hidden');
+  if (bombTimerInterval) { clearInterval(bombTimerInterval); bombTimerInterval = null; }
+  bombLocalDeadline = null;
+  $('#gameInfo').classList.add('hidden');
+  $('#modeClue').textContent = data.initialClue || '';
+  $('#characterCaption').textContent = 'PERSONAJE OCULTO';
+  $('#silhouetteClue').textContent = '';
+  $('#silhouetteClue').classList.add('hidden');
+  $('#value').textContent = `${formatPoints(data.roundValue)} pts`;
+  $('#hintBtn').classList.remove('hidden');
+  $('#hintBtn').disabled = false;
+  $('#nextBtn').disabled = true;
+  $('#answers').innerHTML = '';
+
+  if (data.mode === 'covers') {
+    $('#coverFrame').classList.remove('hidden','revealed');
+    const lensImage = $('#coverLens');
+    const fitCoverFrame = () => {
+      if (!lensImage.naturalWidth || !lensImage.naturalHeight) return;
+      $('#coverFrame').style.aspectRatio = `${lensImage.naturalWidth} / ${lensImage.naturalHeight}`;
+      paintPixelatedCover(gameState.hints, $('#coverFrame').classList.contains('revealed'));
+    };
+    lensImage.onload = fitCoverFrame;
+    lensImage.onerror = () => {
+      // Fallback visual si no encuentra la imagen local
+      const canvas = $('#coverPixel');
+      const ctx = canvas.getContext('2d');
+      canvas.width = 300; canvas.height = 450;
+      ctx.fillStyle = '#1a1f3c'; ctx.fillRect(0,0,300,450);
+      ctx.fillStyle = '#5ce1e6'; ctx.font = '16px monospace'; ctx.textAlign = 'center';
+      ctx.fillText('IMAGEN NO ENCONTRADA', 150, 210);
+      ctx.fillText(`ID: ${gameState.currentEntry.id}`, 150, 240);
+    };
+    lensImage.src = data.cover;
+    if (lensImage.complete && lensImage.naturalWidth) fitCoverFrame();
+    $('#gamePrompt').textContent = '¿De qué videojuego es esta portada?';
+    $('#hintBtn').textContent = 'Escanear −1';
+    $('#status').textContent = 'Elegí una respuesta o activá el escáner.';
+  } else if (data.mode === 'silhouettes') {
+    $('#silhouetteFrame').classList.remove('hidden');
+    $('#silhouetteImage').src = data.image;
+    $('#silhouetteImage').dataset.original = data.originalImage;
+    $('#gamePrompt').textContent = '¿Qué personaje se esconde en esta silueta?';
+    $('#hintBtn').textContent = 'Pedir pista −25%';
+    $('#status').textContent = 'Observá la forma y accesorios. Podés pedir hasta 3 pistas.';
+  } else if (data.mode === 'archive') {
+    $('#archivePanel').classList.remove('hidden');
+    $('#archiveCode').textContent = String(data.round).padStart(2,'0') + '-X';
+    $('#gamePrompt').textContent = '¿De qué videojuego es esta trama?';
+    $('#hintBtn').textContent = 'Pedir pista −25%';
+    $('#status').textContent = 'Leé la descripción. Las pistas adicionales restan 25% del valor.';
+  } else if (isBombMode(data.mode)) {
+    $('#bombPanel').classList.remove('hidden','exploded');
+    $('#bombScreen').classList.toggle('hidden', data.mode !== 'bomb_timed');
+    $('#bombScreen').textContent = '01:00';
+    $('#bombInstruction').textContent = data.mode === 'bomb_timed' ? 'Tenés 60 segundos para descifrar el título.' : 'Adiviná el nombre letra por letra.';
+    $('#gamePrompt').textContent = data.mode === 'bomb_timed' ? '¿PODÉS DESCIFRAR EL CÓDIGO A TIEMPO?' : '¿PODÉS DESCIFRAR EL CÓDIGO?';
+    $('#hintBtn').classList.add('hidden');
+    renderBombState(data);
+    $('#status').textContent = 'Elegí letras. Cada error consume una oportunidad.';
+  }
+
+  if (!isBombMode(data.mode)) {
+    data.options.forEach(name => {
+      const button = document.createElement('button');
+      button.className = 'option';
+      button.type = 'button';
+      button.textContent = name;
+      button.addEventListener('click', () => handleAnswer(name, button));
+      $('#answers').appendChild(button);
+    });
+  }
+}
+
+function renderBombState(data) {
+  $('#bombWord').textContent = '';
+  const mask = String(data.wordMask || '');
+  const visibleChars = Math.max(1, [...mask].filter(ch => ch !== ' ').length);
+  const availableWidth = Math.max(260, $('#bombWord').clientWidth || 560);
+  const spaces = [...mask].filter(ch => ch === ' ').length;
+  const slots = visibleChars + spaces * .55;
+  const cellWidth = Math.max(6, Math.min(19, (availableWidth - 18 - Math.max(0, mask.length - 1) * 2) / slots));
+  $('#bombWord').style.fontSize = `${Math.max(10, Math.min(21, cellWidth * 1.12))}px`;
+  [...mask].forEach(ch => {
+    const span = document.createElement('span');
+    span.textContent = ch === ' ' ? '' : ch;
+    span.style.width = ch === ' ' ? `${cellWidth * .55}px` : `${cellWidth}px`;
+    span.style.minWidth = span.style.width;
+    span.style.borderBottom = ch === ' ' ? '0' : '2px solid var(--accent2)';
+    span.style.textAlign = 'center';
+    $('#bombWord').appendChild(span);
+  });
+  $('#bombLives').textContent = `OPORTUNIDADES: ${data.lives} / ${data.maxLives || 6}`;
+  $('#value').textContent = `${formatPoints(data.roundValue)} pts`;
+  $('#score').textContent = formatPoints(gameState.score);
+  const keyboard = $('#bombKeyboard');
+  if (!keyboard.dataset.built) {
+    keyboard.innerHTML = '';
+    ['0123456789', 'QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].forEach(letters => {
+      const row = document.createElement('div');
+      row.className = 'bomb-key-row';
+      [...letters].forEach(letter => {
+        const key = document.createElement('button');
+        key.type = 'button'; key.className = 'bomb-key'; key.textContent = letter;
+        key.addEventListener('click', () => handleBombLetter(letter, key));
+        row.appendChild(key);
+      });
+      keyboard.appendChild(row);
+    });
+    keyboard.dataset.built = 'true';
+  }
+  const used = new Set(data.guessed || []);
+  keyboard.querySelectorAll('.bomb-key').forEach(key => { key.disabled = used.has(key.textContent) || data.roundOver; });
+  if (data.timed && !data.roundOver && data.timeLeft !== null) {
+    bombLocalDeadline = Date.now() + data.timeLeft * 1000;
+    updateBombTimerDisplay();
+    if (bombTimerInterval) clearInterval(bombTimerInterval);
+    bombTimerInterval = setInterval(updateBombTimerDisplay, 200);
+  }
+}
+
+function updateBombTimerDisplay() {
+  if (!bombLocalDeadline || answered) return;
+  const leftMs = Math.max(0, bombLocalDeadline - Date.now());
+  const seconds = Math.ceil(leftMs / 1000);
+  $('#bombScreen').textContent = `${String(Math.floor(seconds / 60)).padStart(2,'0')}:${String(seconds % 60).padStart(2,'0')}`;
+  if (leftMs <= 0) {
+    gameState.bomb.over = true;
+    gameState.bomb.solved = false;
+    finishBombRound(true);
+  }
+}
+
+function handleBombLetter(letter, key) {
+  if (answered || !gameState.bomb || gameState.bomb.over) return;
+  key.disabled = true;
+  const b = gameState.bomb;
+  if (b.guessed.includes(letter)) return;
+  b.guessed.push(letter);
+
+  if (!b.word.replace(/ /g, '').includes(letter)) {
+    b.wrong.push(letter);
+    b.lives = Math.max(0, b.lives - 1);
+  }
+
+  const required = [...new Set(b.word.replace(/[^A-Z0-9]/g, '').split(''))];
+  b.solved = required.every(ch => b.guessed.includes(ch));
+  b.over = b.solved || b.lives <= 0;
+
+  let mask = '';
+  for (const ch of b.word) {
+    mask += (ch === ' ' || b.guessed.includes(ch)) ? ch : '_';
+  }
+
+  if (b.over && b.solved) {
+    gameState.score += currentRoundValue();
+  }
+
+  renderBombState({
+    wordMask: mask,
+    lives: b.lives,
+    maxLives: 6,
+    guessed: b.guessed,
+    timed: b.timed,
+    timeLeft: null,
+    roundValue: currentRoundValue(),
+    roundOver: b.over,
+    solved: b.solved
+  });
+
+  if (b.over) {
+    finishBombRound(false);
+  } else {
+    $('#status').textContent = b.wrong.includes(letter) ? `Cable incorrecto. Te quedan ${b.lives} oportunidades.` : `Letra ${letter} encontrada.`;
+  }
+}
+
+function finishBombRound(timeout) {
+  answered = true;
+  if (bombTimerInterval) { clearInterval(bombTimerInterval); bombTimerInterval = null; }
+  $('#nextBtn').disabled = false;
+  $('#bombKeyboard').querySelectorAll('button').forEach(button => button.disabled = true);
+  const entry = gameState.currentEntry;
+
+  if (gameState.bomb.solved) {
+    if (!gameState.bomb.timed) $('#bombScreen').textContent = 'SAFE';
+    $('#status').textContent = `¡BOMBA DESACTIVADA! +${formatPoints(currentRoundValue())} puntos. Era ${entry.name}.`;
+  } else {
+    $('#bombPanel').classList.add('exploded');
+    if (timeout) $('#bombScreen').textContent = '00:00';
+    else if (!gameState.bomb.timed) $('#bombWord').textContent = 'BOOM!';
+    $('#status').textContent = timeout ? `¡Se acabó el tiempo! Era ${entry.name}.` : `La bomba explotó. Era ${entry.name}.`;
+  }
+
+  $('#infoYear').textContent = entry.year || '—';
+  $('#infoGenre').textContent = entry.genre || '—';
+  $('#infoStudio').textContent = entry.studio || '—';
+  $('#infoPlatforms').textContent = entry.platforms || 'Multiplataforma';
+  $('#infoMultiplayer').textContent = entry.multiplayer || 'Consultar ficha';
+  $('#infoFact').textContent = entry.fact || '—';
+  $('#gameInfo').classList.remove('hidden');
+}
+
+function startGame() {
+  if (!selectedMode) return;
+  gameState = {
+    active: true,
+    mode: selectedMode,
+    round: 1,
+    totalRounds: modeRoundCounts[selectedMode] || 15,
+    score: 0,
+    hints: 0,
+    usedIds: [],
+    currentEntry: null,
+    bomb: null
+  };
+  $('#score').textContent = '0';
+  $('#round').textContent = `1 / ${gameState.totalRounds}`;
+  show('#game');
+  renderRound(generateRoundData());
+}
+
+function handleAnswer(name, selectedBtn) {
+  if (answered) return;
+  answered = true;
+  const entry = gameState.currentEntry;
+  const isCorrect = name === entry.name;
+  const val = currentRoundValue();
+  if (isCorrect) gameState.score += val;
+  $('#score').textContent = formatPoints(gameState.score);
+
+  if (gameState.mode === 'covers') {
+    $('#coverFrame').classList.add('revealed');
+    paintPixelatedCover(0, true);
+  } else if (gameState.mode === 'silhouettes') {
+    $('#silhouetteImage').src = $('#silhouetteImage').dataset.original;
+    $('#characterCaption').textContent = `${entry.name.toUpperCase()} // ${entry.game.toUpperCase()}`;
+  } else {
+    $('#modeClue').textContent = `TRAMA IDENTIFICADA: ${entry.name}`;
+  }
+
+  [...$('#answers').children].forEach(btn => {
+    btn.disabled = true;
+    if (btn.textContent === entry.name) btn.classList.add('correct');
+    else if (btn === selectedBtn) btn.classList.add('wrong');
+  });
+
+  $('#status').textContent = isCorrect ? `¡Correcto! +${formatPoints(val)} puntos.` : `No era esa. La respuesta era ${entry.name}.`;
+
+  const info = entry.details || entry;
+  $('#infoYear').textContent = info.year || '—';
+  $('#infoGenre').textContent = info.genre || '—';
+  $('#infoStudio').textContent = info.studio || '—';
+  $('#infoPlatforms').textContent = info.platforms || 'Multiplataforma';
+  $('#infoMultiplayer').textContent = info.multiplayer || 'Depende de la entrega';
+  $('#infoFact').textContent = info.fact || '—';
+  $('#gameInfo').classList.remove('hidden');
+  $('#hintBtn').disabled = true;
+  $('#nextBtn').disabled = false;
+}
+
+$('#hintBtn').addEventListener('click', () => {
+  if (answered) return;
+  const limit = (gameState.mode === 'silhouettes' || gameState.mode === 'archive') ? 3 : 4;
+  if (gameState.hints >= limit) return;
+  gameState.hints++;
+
+  if (gameState.mode === 'covers') {
+    paintPixelatedCover(gameState.hints);
+    $('#status').textContent = `Escaneo ${gameState.hints} de 4: mejora la resolución.`;
+  } else if (gameState.mode === 'silhouettes') {
+    const clue = gameState.currentEntry.clues[gameState.hints - 1] || 'Sin más pistas.';
+    $('#silhouetteClue').textContent = clue;
+    $('#silhouetteClue').classList.remove('hidden');
+    $('#status').textContent = `Pista ${gameState.hints} de 3 revelada.`;
+  } else if (gameState.mode === 'archive') {
+    const clue = gameState.currentEntry.generatedClues[gameState.hints] || 'Sin más pistas.';
+    $('#modeClue').textContent = clue;
+    $('#status').textContent = `Pista ${gameState.hints + 1} de 4 revelada.`;
+  }
+
+  $('#value').textContent = `${formatPoints(currentRoundValue())} pts`;
+  if (gameState.hints >= limit) $('#hintBtn').disabled = true;
+});
+
+$('#nextBtn').addEventListener('click', () => {
+  gameState.round++;
+  if (gameState.round > gameState.totalRounds) {
+    gameState.active = false;
+    $('#finalScore').textContent = `${formatPoints(gameState.score)} / 100.000`;
+    $('#finalSummary').textContent = `Completaste ${gameState.totalRounds} rondas en ${modeLabels[gameState.mode]}.`;
+    $('#playerName').value = '';
+    $('#playerNameForm').classList.remove('hidden');
+    $('#savedMessage').classList.add('hidden');
+    show('#end');
+    loadRanking(rankingModeFor(gameState.mode));
+    return;
+  }
+  $('#round').textContent = `${gameState.round} / ${gameState.totalRounds}`;
+  renderRound(generateRoundData());
+});
+
+// ============================================================================
+// RANKING LOCAL EN LOCALSTORAGE (Reemplaza a MySQL)
+// ============================================================================
+const STORAGE_RANKING_KEY = 'trivia_2026_ranking_v1';
+
+function getStoredScores() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_RANKING_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+function saveScore() {
+  const rawName = $('#playerName').value.trim().replace(/\s+/g, ' ').slice(0, 20);
+  if (rawName.length < 2) {
+    $('#saveMessage').textContent = 'Ingresá un nombre de al menos 2 caracteres.';
+    return;
+  }
+  const all = getStoredScores();
+  const now = new Date();
+  const dateStr = `${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+  all.push({
+    player_name: rawName,
+    score: gameState.score,
+    game_mode: gameState.mode,
+    played_at: dateStr
+  });
+  localStorage.setItem(STORAGE_RANKING_KEY, JSON.stringify(all));
+
+  $('#saveMessage').textContent = '';
+  $('#playerNameForm').classList.add('hidden');
+  $('#savedMessage').classList.remove('hidden');
+  $('#savedMessage').textContent = `RECORD REGISTRADO: ${rawName}`;
+  loadRanking(rankingModeFor(gameState.mode));
+}
+
+function loadRanking(mode = activeRankingMode) {
+  activeRankingMode = ['covers','silhouettes','archive','bomb'].includes(mode) ? mode : 'covers';
+  document.querySelectorAll('.ranking-tabs').forEach(tabGroup => {
+    tabGroup.querySelectorAll('[data-ranking-mode]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.rankingMode === activeRankingMode);
+    });
+  });
+
+  const all = getStoredScores();
+  const filtered = all
+    .filter(item => activeRankingMode === 'bomb' ? isBombMode(item.game_mode) : item.game_mode === activeRankingMode)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
+
+  const containers = [$('#rankingContent'), $('#endRankingContent')];
+  if (!filtered.length) {
+    containers.forEach(el => { el.innerHTML = '<div class="empty-ranking">Todavía no hay puntuaciones guardadas en este navegador.</div>'; });
+    return;
+  }
+
+  const table = document.createElement('table');
+  table.innerHTML = '<thead><tr><th>#</th><th>Jugador</th><th>Modo</th><th>Fecha</th><th class="points">Puntos</th></tr></thead>';
+  const body = document.createElement('tbody');
+  filtered.forEach((entry, idx) => {
+    const row = document.createElement('tr');
+    const modeLabel = modeLabels[entry.game_mode] || 'PORTADAS';
+    [String(idx + 1), entry.player_name, modeLabel, entry.played_at].forEach(val => {
+      const td = document.createElement('td'); td.textContent = val; row.appendChild(td);
+    });
+    const pts = document.createElement('td'); pts.className = 'points'; pts.textContent = `${formatPoints(entry.score)} pts`;
+    row.appendChild(pts); body.appendChild(row);
+  });
+  table.appendChild(body);
+  containers.forEach(el => el.replaceChildren(table.cloneNode(true)));
+}
+
+document.querySelectorAll('.ranking-tabs [data-ranking-mode]').forEach(btn => {
+  btn.addEventListener('click', () => loadRanking(btn.dataset.rankingMode));
+});
+
+// ============================================================================
+// CONTROLES GENERALES, TECLADO, TEMA Y AUDIO
+// ============================================================================
+$('#startBtn').addEventListener('click', startGame);
+$('#againBtn').addEventListener('click', startGame);
+$('#saveScoreBtn').addEventListener('click', saveScore);
+$('#playerName').addEventListener('keydown', e => { if (e.key === 'Enter') saveScore(); });
+
+$('#leaveGameBtn').addEventListener('click', () => $('#leaveConfirm').classList.remove('hidden'));
+$('#stayInGameBtn').addEventListener('click', () => $('#leaveConfirm').classList.add('hidden'));
+$('#confirmLeaveBtn').addEventListener('click', () => {
+  if (bombTimerInterval) clearInterval(bombTimerInterval);
+  gameState.active = false;
+  $('#leaveConfirm').classList.add('hidden');
+  show('#intro');
+  loadRanking();
+});
+$('#homeBtn').addEventListener('click', () => {
+  if ($('#savedMessage').classList.contains('hidden')) $('#leaveConfirm').classList.remove('hidden');
+  else { show('#intro'); loadRanking(); }
+});
+
+document.addEventListener('keydown', event => {
+  if (!isBombMode(gameState.mode) || answered || $('#game').classList.contains('hidden')) return;
+  const key = event.key.toUpperCase();
+  if (/^[A-Z0-9]$/.test(key)) {
+    const button = [...$('#bombKeyboard').querySelectorAll('.bomb-key')].find(el => el.textContent === key && !el.disabled);
+    if (button) handleBombLetter(key, button);
+  }
+});
+
+// Audio local estático
+const backgroundMusic = $('#backgroundMusic');
+const volumeSlider = $('#musicVolume');
+const soundToggle = $('#soundToggle');
+let musicMuted = localStorage.getItem('portada-music-muted') === 'true';
+
+backgroundMusic.src = 'assets/music/tema.wav';
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.28;
+backgroundMusic.muted = musicMuted;
+
+function updateSoundUI() {
+  soundToggle.textContent = musicMuted ? '♫ ACTIVAR' : '♫ SILENCIAR';
+}
+soundToggle.addEventListener('click', () => {
+  musicMuted = !musicMuted;
+  backgroundMusic.muted = musicMuted;
+  localStorage.setItem('portada-music-muted', String(musicMuted));
+  if (!musicMuted) backgroundMusic.play().catch(() => {});
+  updateSoundUI();
+});
+volumeSlider.addEventListener('input', () => {
+  backgroundMusic.volume = Number(volumeSlider.value) / 100;
+});
+window.addEventListener('pointerdown', () => {
+  if (!musicMuted) backgroundMusic.play().catch(() => {});
+}, {once: true});
+updateSoundUI();
+
+// Tema Claro / Oscuro
+$('#themeBtn').addEventListener('click', () => {
+  const root = document.documentElement;
+  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('portada-theme', root.dataset.theme);
+});
+const savedTheme = localStorage.getItem('portada-theme');
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+
+loadRanking();
+</script>
+</body>
+</html>
