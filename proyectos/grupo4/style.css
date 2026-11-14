@@ -1,0 +1,481 @@
+/* ==========================================
+   ESTILOS CÓMIC / ANIME CLÁSICO "QUIÉN ES ESTE POKÉMON?"
+   ========================================== */
+
+:root {
+  --bg-primary: #10141f;
+  --panel-bg: #1a2238;
+  --comic-yellow: #ffcc00;
+  --comic-blue: #1d75bc;
+  --comic-red: #ff3b30;
+  --comic-green: #34c759;
+  --border-comic: #0b0e17;
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+}
+
+body.dark-mode {
+  --bg-primary: #07090f;
+  --panel-bg: #111827;
+  --text-main: #f8fafc;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+}
+
+/* Pantalla de Inicio Minimalista */
+.anime-start-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #ff3b30 0%, #b91c1c 65%, #7f1d1d 100%);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.anime-sunburst {
+  position: absolute;
+  inset: -50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.15) 0deg 15deg,
+    transparent 15deg 30deg
+  );
+  animation: rotateSunburst 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateSunburst {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.anime-start-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.9);
+  border: 4px solid var(--comic-yellow);
+  padding: 40px 50px;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(255, 204, 0, 0.2);
+  max-width: 480px;
+  width: 90%;
+}
+
+.anime-main-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--comic-yellow);
+  text-shadow: 3px 3px 0px #000, 5px 5px 0px var(--comic-blue);
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+.anime-btn-start {
+  background: var(--comic-yellow);
+  color: #111827;
+  border: 3px solid #000;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 900;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
+  text-transform: uppercase;
+}
+.anime-btn-start:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+  background: #ffe600;
+}
+.anime-btn-start:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Estructura Principal a Pantalla Completa */
+.app-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 65px 1fr 140px;
+  padding: 12px 20px;
+  gap: 12px;
+}
+
+/* Cabecera Estilo Cómic */
+.anime-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--panel-bg);
+  border: 3px solid var(--comic-yellow);
+  border-radius: 16px;
+  padding: 0 20px;
+  box-shadow: 0 6px 0px #000;
+}
+
+.anime-pill {
+  background: var(--comic-blue);
+  color: #fff;
+  border: 2px solid #000;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 13px;
+  box-shadow: 2px 2px 0px #000;
+}
+
+.anime-header-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--comic-yellow);
+  text-shadow: 2px 2px 0px #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.anime-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.anime-btn-icon {
+  background: var(--panel-bg);
+  color: var(--text-main);
+  border: 2px solid var(--comic-yellow);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  box-shadow: 2px 2px 0px #000;
+  transition: transform .1s;
+}
+.anime-btn-icon:hover { transform: scale(1.08); }
+
+/* Contenedor Central del Juego */
+.anime-main-content {
+  position: relative;
+  background: var(--panel-bg);
+  border: 3px solid var(--comic-blue);
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 6px 0px #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-play-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.col-left-tv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px dashed rgba(255,255,255,0.15);
+  padding-right: 20px;
+  height: 100%;
+}
+
+.col-right-tv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.anime-stats-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tv-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(29,117,188,0.25) 0%, rgba(16,20,31,0.6) 80%);
+  border: 3px solid #000;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+  width: 100%;
+}
+
+.imgBox {
+  position: relative;
+  display: inline-block;
+  line-height: 0; /* Soluciona desajustes de línea en imágenes */
+}
+
+.pokeBase, .pokeMask {
+  width: min(320px, 35vw);
+  height: auto;
+  max-height: 38vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Máscara mejorada para eliminar filtración de píxeles */
+.pokeMask {
+  position: absolute;
+  inset: 0;
+  filter: brightness(0);
+  --rev: 0%;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--rev), #000 calc(var(--rev) + 0.5%));
+          mask-image: radial-gradient(circle at 50% 50%, transparent var(--rev), #000 calc(var(--rev) + 0.5%));
+  transition: -webkit-mask-image .35s ease, mask-image .35s ease, opacity .35s ease;
+}
+
+.anime-btn-action {
+  background: var(--comic-blue);
+  color: #fff;
+  border: 2px solid #000;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+  transition: transform .1s, background .1s;
+}
+.anime-btn-action:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+.anime-btn-action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tv-question-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.question {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--comic-yellow);
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.ans {
+  display: grid;
+  gap: 10px;
+}
+
+.btn {
+  width: 100%;
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 3px solid #000;
+  background: #1e293b;
+  color: var(--text-main);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #000;
+  transition: transform .1s, background .2s, box-shadow .1s;
+  font-size: 15px;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background: #334155;
+  box-shadow: 5px 5px 0px #000;
+}
+.btn.correct {
+  background: #065f46 !important;
+  border-color: #000 !important;
+  color: #d1fae5 !important;
+}
+.btn.wrong {
+  background: #991b1b !important;
+  border-color: #000 !important;
+  color: #fee2e2 !important;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.muted { color: var(--text-muted); font-size: 13px; font-weight: 700; }
+.extra { margin-top: 6px; text-align: center; color: var(--text-muted); font-size: 12px; font-weight: 700; }
+.chip { padding: 2px 8px; border-radius: 999px; border: 2px solid #000; font-weight: 900; font-size: 11px; background: var(--comic-yellow); color: #000; }
+
+/* Pie de página con Ranking */
+.anime-footer-ranking {
+  background: var(--panel-bg);
+  border: 3px solid var(--comic-blue);
+  border-radius: 16px;
+  padding: 10px 16px;
+  box-shadow: 0 6px 0px #000;
+  overflow-y: auto;
+  max-height: 140px;
+}
+
+#ranking h2 { font-size: 13px; margin: 0 0 4px 0; color: var(--comic-yellow); text-transform: uppercase; position: sticky; top: 0; background: var(--panel-bg); z-index: 2; }
+#ranking table { width: 100%; border-collapse: collapse; font-size: 12px; }
+#ranking th, #ranking td { border: 2px solid rgba(255,255,255,0.1); padding: 4px 8px; text-align: left; }
+
+/* ==========================================
+   ESTILOS DE LA PANTALLA DE RESUMEN FINAL
+   ========================================== */
+.summary-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.summary-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 4px solid var(--comic-yellow);
+  border-radius: 20px;
+  padding: 20px 24px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 95%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+}
+
+.summary-rank-heading {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--comic-yellow);
+  text-shadow: 2px 2px 0px #000;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+}
+
+.summary-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.pokemon-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  overflow-y: auto;
+  max-height: 260px;
+  padding: 6px;
+  margin-bottom: 10px;
+}
+
+.poke-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 8px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0px #000;
+  position: relative;
+}
+
+.poke-summary-item.correct-guess {
+  border-color: var(--comic-green);
+  background: rgba(52, 199, 89, 0.15);
+}
+
+.poke-summary-item.wrong-guess {
+  border-color: var(--comic-red);
+  background: rgba(255, 59, 48, 0.15);
+}
+
+.poke-summary-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 0px #000);
+}
+
+.poke-summary-name {
+  font-size: 11px;
+  font-weight: 900;
+  margin-top: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Modal de Ajustes */
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center; z-index: 4000;
+  opacity: 0; pointer-events: none; transition: opacity .25s ease;
+}
+.modal.open { opacity: 1; pointer-events: auto; }
+.modal-content {
+  background: var(--panel-bg); border: 3px solid var(--comic-yellow); border-radius: 18px;
+  padding: 20px; width: 100%; max-width: 420px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  color: var(--text-main);
+}
+.modal-content h2 { font-size: 17px; margin-top: 0; margin-bottom: 12px; color: var(--comic-yellow); }
+.modal-section { border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 12px; }
+.modal-section:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.audio-title { font-size: 12px; font-weight: 900; margin-bottom: 8px; color: var(--text-main); text-align: left; }
+.audio-controls-grid { display: grid; gap: 10px; }
+.audio-control-item { display: flex; flex-direction: column; gap: 4px; font-size: 11px; font-weight: 700; color: var(--text-muted); text-align: left; }
+.audio-input-row { display: flex; align-items: center; gap: 10px; width: 100%; }
+.audio-input-row input[type="range"] { width: 100%; cursor: pointer; }
+.btnSm { padding: 6px 12px; border-radius: 10px; border: 2px solid #000; background: var(--comic-blue); color: #fff; font-weight: 900; cursor: pointer; font-size: 12px; box-shadow: 2px 2px 0px #000; }
+.btnSm:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Responsive móvil */
+@media (max-width: 850px) {
+  html, body { overflow: auto; height: auto; }
+  .app-fullscreen { height: auto; overflow: visible; display: flex; flex-direction: column; gap: 12px; padding: 10px; }
+  .game-play-grid { grid-template-columns: 1fr; gap: 16px; }
+  .col-left-tv { border-right: none; padding-right: 0; border-bottom: 2px dashed rgba(255,255,255,0.15); padding-bottom: 16px; }
+  .pokemon-summary-grid { grid-template-columns: repeat(2, 1fr); }
+}

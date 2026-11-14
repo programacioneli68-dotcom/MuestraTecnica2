@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Quien es este Pokemon?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu" class="app">
+  <h1>👾 ¿Quien es este Pokemon?</h1>
+  <div class="muted">Adivina el Pokemon y gana 10 puntos por cada acierto</div>
+  <button id="startBtn" class="startBtn">▶ START</button>
+  <button id="infBtn" class="btnSm shopBtn infBtn">♾️ Infinito</button>
+  <button id="openShop" class="btnSm shopBtn">🛒 Tienda</button>
+  <div style="margin-top:16px"><span class="pill">🪙 Puntos: <b class="wallet">0</b></span></div>
+</div>
+
+<div id="shop" class="app" hidden>
+  <div class="row">
+    <h1>🛒 Tienda</h1>
+    <div class="pill">🪙 Puntos: <b class="wallet">0</b></div>
+  </div>
+  <h2>🎮 Modos de juego</h2>
+  <div id="shopModes" class="grid"></div>
+  <h2>🖼️ Fondos</h2>
+  <div id="shopBg" class="grid"></div>
+  <h2>🎵 Musica de fondo</h2>
+  <div id="shopMusic" class="grid"></div>
+  <div class="controls"><span id="shopMsg" class="muted"></span><button id="shopBack" class="btnSm">⬅ Menú</button></div>
+</div>
+
+<div id="game" class="app" hidden>
+  <h1>👾 ¿Quien es este Pokemon?</h1>
+  <div class="row">
+    <div class="pill">Puntos: <b id="score">0</b></div>
+    <div class="pill">🪙 Total: <b class="wallet">0</b></div>
+    <div class="pill" id="livesPill" hidden>Vidas: <b id="lives"></b></div>
+    <div class="pill">Ronda: <b id="round">1</b>/<b id="total">10</b></div>
+  </div>
+  <div class="question">Tocá <b>Ayuda</b> para revelar por sectores o elegí el nombre correcto:</div>
+  <div class="stage">
+    <div class="imgBox">
+      <img id="pokeBase" class="pokeBase" src="" alt="Pokémon a color">
+      <img id="pokeMask" class="pokeMask" src="" alt="Silueta negra">
+    </div>
+    <button id="hint" class="btnSm" style="margin-top:10px">🕵️ Ayuda</button>
+    <div id="extra" class="extra"></div>
+  </div>
+  <div id="answers" class="ans"></div>
+  <div class="controls">
+    <button id="toMenu" class="btnSm">🏠 Menú</button>
+    <span id="status" class="muted">Listo</span>
+    <button id="next" class="btnSm" disabled>Siguiente ⏭</button>
+  </div>
+  <div id="ranking"></div>
+</div>
+
+<script>
+// Configuración general
+const POINTS_PER_HIT = 10, 
+      TOTAL = 10, 
+      MAX_POKE = 500;
+
+// Configuración Modo Infinito
+const INF_PRICE = 50,       // monedas para desbloquearlo en la tienda
+      INF_LIVES = 3,        // vidas iniciales
+      INF_START_OPTS = 3,   // opciones en las primeras rondas
+      INF_MAX_OPTS = 8,     // tope de opciones
+      INF_STEP = 10,        // cada cuantas rondas se agrega una opcion
+      INF_MAX_POKE = 1025;  // pokemones posibles (ids 1..1025 de PokeAPI)
+</script>
+<script src="script.js"></script>
+</body>
+</html>

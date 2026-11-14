@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explora el Mundo | Quiz de Banderas</title>
+
+<style>
+:root {
+    --fondo: #0b1024;
+    --panel: #151d38;
+    --panel2: #202b4c;
+    --violeta: #9475ff;
+    --celeste: #55d6ff;
+    --verde: #42e6a4;
+    --rojo: #ff7185;
+    --blanco: #f5f7ff;
+    --gris: #aab5d3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--blanco);
+    background:
+        radial-gradient(ellipse at 10% 10%, #25235b 0, transparent 38%),
+        radial-gradient(ellipse at 90% 90%, #123e5b 0, transparent 35%),
+        var(--fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 14px;
+}
+
+button { font: inherit; }
+
+.app {
+    width: 100%;
+    max-width: 900px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: .3px;
+}
+
+.logo-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #9475ff, #55d6ff);
+    font-size: 23px;
+}
+
+.record {
+    color: #ffe18a;
+    background: #24233c;
+    border: 1px solid #51456d;
+    border-radius: 14px;
+    padding: 10px 13px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.screen {
+    display: none;
+    animation: aparecer .4s ease;
+}
+
+.screen.active { display: block; }
+
+.panel {
+    background: rgba(21, 29, 56, .94);
+    border: 1px solid rgba(159, 177, 231, .18);
+    border-radius: 26px;
+    padding: clamp(20px, 5vw, 42px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, .28);
+}
+
+.hero {
+    text-align: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--celeste);
+    background: #15344b;
+    border: 1px solid #24526e;
+    padding: 8px 13px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 7vw, 66px);
+    line-height: 1.06;
+    letter-spacing: -2px;
+    margin: 22px 0 16px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #a88cff, #55d6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.description {
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: var(--gris);
+}
+
+.world {
+    font-size: clamp(65px, 12vw, 105px);
+    margin: 25px 0;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 28px 0;
+}
+
+.feature {
+    padding: 15px 7px;
+    border-radius: 16px;
+    background: #202b4c;
+    border: 1px solid #303d62;
+}
+
+.feature-icon {
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.feature strong {
+    display: block;
+    font-size: 13px;
+}
+
+.feature small {
+    display: block;
+    margin-top: 5px;
+    color: var(--gris);
+    font-size: 11px;
+}
+
+/* BOTÓN PRINCIPAL */
+.primary {
+    width: 100%;
+    border: 0;
+    border-radius: 15px;
+    padding: 17px 20px;
+    color: #10142a;
+    background: linear-gradient(100deg, #a88cff, #55d6ff);
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .2s, filter .2s;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.primary:active { transform: scale(.98); }
+
+.note {
+    color: var(--gris);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* JUEGO */
+.game-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.game-heading h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.counter {
+    background: var(--panel2);
+    border: 1px solid #344164;
+    border-radius: 12px;
+    padding: 9px 12px;
+    white-space: nowrap;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.progress-track {
+    height: 9px;
+    background: #293452;
+    border-radius: 100px;
+    overflow: hidden;
+    margin: 18px 0 25px;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--violeta), var(--celeste));
+    transition: width .35s ease;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    background: #202b4c;
+    border: 1px solid #303d62;
+    border-radius: 15px;
+    padding: 13px;
+    text-align: center;
+}
+
+.stat span {
+    display: block;
+    color: var(--gris);
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.stat strong { font-size: 22px; }
+
+.question {
+    text-align: center;
+    font-size: clamp(19px, 4vw, 26px);
+    margin: 10px 0 22px;
+}
+
+.flag-box {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(ellipse, #28385f 0, #182441 70%);
+    border: 1px solid #35456e;
+    border-radius: 22px;
+    padding: 20px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.flag-box::before {
+    content: "🌍";
+    position: absolute;
+    opacity: .06;
+    font-size: 180px;
+    pointer-events: none;
+}
+
+.flag {
+    position: relative;
+    width: min(100%, 440px);
+    height: 205px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .28));
+    animation: bandera .35s ease;
+}
+
+.flag-fallback {
+    position: relative;
+    display: none;
+    text-align: center;
+    color: var(--gris);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.answer {
+    min-height: 65px;
+    padding: 13px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 15px;
+    border: 1px solid #354263;
+    background: #202b4c;
+    color: var(--blanco);
+    font-weight: 750;
+    cursor: pointer;
+    transition: border .2s, background .2s, transform .2s;
+}
+
+.answer:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: var(--violeta);
+    background: #2a3559;
+}
+
+.letter {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: #344164;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+}
+
+.answer.correct {
+    background: #123f38;
+    border-color: var(--verde);
+}
+
+.answer.correct .letter { background: #20765d; }
+
+.answer.wrong {
+    background: #492837;
+    border-color: var(--rojo);
+}
+
+.answer.wrong .letter { background: #853b50; }
+
+.answer:disabled { cursor: default; }
+
+.feedback {
+    display: none;
+    border-radius: 15px;
+    margin-top: 18px;
+    padding: 15px 17px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.feedback.show {
+    display: block;
+    animation: aparecer .25s ease;
+}
+
+.feedback.good {
+    background: #123f38;
+    border: 1px solid #277c62;
+}
+
+.feedback.bad {
+    background: #492837;
+    border: 1px solid #8c4056;
+}
+
+.game-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.muted {
+    color: var(--gris);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.next {
+    border: 0;
+    border-radius: 13px;
+    padding: 13px 18px;
+    background: var(--violeta);
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.next:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+/* RESULTADOS */
+.result-icon {
+    font-size: 75px;
+    margin: 10px 0;
+}
+
+.result-title {
+    font-size: clamp(30px, 6vw, 48px);
+    margin: 12px 0;
+}
+
+.final-score {
+    font-size: 65px;
+    font-weight: 950;
+    background: linear-gradient(90deg, #a88cff, #55d6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.result-card {
+    background: #202b4c;
+    border: 1px solid #303d62;
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.result-card span {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.result-card strong {
+    display: block;
+    font-size: 25px;
+    margin-top: 8px;
+}
+
+footer {
+    text-align: center;
+    color: #8794b8;
+    font-size: 12px;
+    padding: 22px 0 0;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes bandera {
+    from { opacity: 0; transform: scale(.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 540px) {
+    .topbar { align-items: flex-start; }
+    .logo { font-size: 15px; }
+    .record { font-size: 11px; padding: 9px; }
+    .answers { grid-template-columns: 1fr; }
+    .flag-box { min-height: 180px; }
+    .flag { height: 160px; }
+    .game-footer { align-items: flex-start; }
+    .features { gap: 6px; }
+    .feature strong { font-size: 11px; }
+    .panel { border-radius: 20px; }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+    <header class="topbar">
+        <div class="logo">
+            <div class="logo-icon">🌎</div>
+            <span>EXPLORA EL <span class="gradient-text">MUNDO</span></span>
+        </div>
+        <div class="record">🏆 Record: <span id="best">0</span>/20</div>
+    </header>
+
+    <!-- PANTALLA DE INICIO -->
+    <section id="home" class="screen active">
+        <div class="panel hero">
+            <span class="eyebrow">✦ EL DESAFIO GEOGRAFICO ✦</span>
+
+            <h1>¿Cuánto sabés<br>del <span class="gradient-text">mundo?</span></h1>
+
+            <p class="description">
+                Viajá por el planeta sin moverte de tu lugar.
+                Reconocé las banderas, poné a prueba tus conocimientos
+                y convertite en una leyenda de la geografía.
+            </p>
+
+            <div class="world">🌍</div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚩</div>
+                    <strong>20 rondas</strong>
+                    <small>20 desafíos</small>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <strong>Sumá puntos</strong>
+                    <small>1 por acierto</small>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <strong>Superate</strong>
+                    <small>Batí tu récord</small>
+                </div>
+            </div>
+
+            <div style="max-width:440px;margin:25px auto 0;text-align:left">
+                <label for="playerName" style="display:block;margin-bottom:9px;font-weight:800">
+                    👤 ¿Cómo te llamás?
+                </label>
+
+                <input
+                    id="playerName"
+                    type="text"
+                    maxlength="20"
+                    placeholder="Escribí tu nombre..."
+                    autocomplete="off"
+                    style="width:100%;padding:15px;border-radius:13px;
+                    border:1px solid #354263;background:#202b4c;
+                    color:white;font-size:16px;outline:none"
+                >
+
+                <p id="nameError" style="color:#ff7185;font-size:13px;display:none">
+                    Escribí tu nombre para empezar.
+                </p>
+            </div>
+
+            <button class="primary" id="start" style="margin-top:15px">
+                ¡EMPEZAR A JUGAR! ➜
+            </button>
+
+            <p class="note">¿Reconocés todas las banderas? ¡Demostralo!</p>
+        </div>
+    </section>
+
+    <!-- PANTALLA DEL JUEGO -->
+    <section id="game" class="screen">
+        <div class="panel">
+
+            <div class="game-heading">
+                <h2>🚩 Desafío de banderas</h2>
+                <div class="counter">
+                    Ronda <span id="round">1</span>/20
+                </div>
+            </div>
+
+            <div class="progress-track">
+                <div id="progress" class="progress-bar"></div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>⭐ PUNTOS</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🔥 RACHA</span>
+                    <strong id="streak">0</strong>
+                </div>
+
+                <div class="stat">
+                    <span>🎯 ACIERTOS</span>
+                    <strong id="hits">0</strong>
+                </div>
+            </div>
+
+            <h2 class="question">
+                ¿A qué país pertenece esta bandera?
+            </h2>
+
+            <div class="flag-box">
+                <img id="flag" class="flag" src="" alt="Bandera del país">
+
+                <div id="flagFallback" class="flag-fallback">
+                    <div style="font-size:35px">🖼️</div>
+                    No se encontró la imagen.<br>
+                    Revisá la carpeta <b>flags</b> y el nombre del archivo.
+                </div>
+            </div>
+
+            <div id="answers" class="answers"></div>
+
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+            <div class="game-footer">
+                <span id="hint" class="muted">
+                    Elegí una respuesta para continuar.
+                </span>
+
+                <button id="next" class="next" disabled>
+                    Siguiente ➜
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANTALLA FINAL Y TABLA DE CLASIFICACIÓN -->
+    <section id="result" class="screen">
+        <div class="panel hero">
+
+            <span class="eyebrow">✦ FIN DEL RECORRIDO ✦</span>
+
+            <div id="resultIcon" class="result-icon">🏆</div>
+
+            <h2 id="resultTitle" class="result-title">
+                ¡Excelente!
+            </h2>
+
+            <p id="resultMessage" class="description">
+                Terminaste el desafío.
+            </p>
+
+            <div class="final-score">
+                <span id="finalScore">0</span><span style="font-size:30px">/20</span>
+            </div>
+
+            <p style="color:var(--gris);margin-top:-5px">
+                puntos obtenidos
+            </p>
+
+            <!-- TABLA DE CLASIFICACIÓN -->
+            <div style="margin:28px 0;text-align:left">
+                <h2 style="font-size:22px">🏆 Salón de la fama</h2>
+
+                <p style="color:#aab5d3;font-size:13px">
+                    Los 15 mejores resultados de todos los jugadores.
+                </p>
+
+                <div style="overflow-x:auto;border:1px solid #354263;border-radius:14px">
+                    <table style="width:100%;border-collapse:collapse;text-align:left">
+                        <thead style="background:#202b4c">
+                        <tr> 
+                           <th style="padding:12px">#</th>
+                           <th style="padding:12px">Jugador</th>
+                           <th style="padding:12px">Puntos</th>
+                           <th style="padding:12px">Tiempo</th>
+                           <th style="padding:12px">Fecha</th>
+                         </tr>
+                         </thead>
+
+
+                        <tbody id="leaderboard">
+                            <tr>
+                                <td colspan="5" style="padding:15px;color:#aab5d3">
+                                    Todavía no hay resultados.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <button class="primary" id="replay">
+                🔄 JUGAR OTRA VEZ
+            </button>
+
+            <button id="homeButton" style="
+                width:100%;margin-top:12px;padding:14px;
+                border:1px solid #354263;border-radius:14px;
+                background:#202b4c;color:white;font-weight:800;cursor:pointer">
+                Volver al inicio
+            </button>
+
+        </div>
+    </section>
+
+    <footer>
+        EXPLORÁ EL MUNDO · Aprender también puede ser una aventura 🌎
+    </footer>
+
+</div>
+
+<script>
+
+const countries = [
+
+    // NIVEL FÁCIL
+    {name:"Argentina",image:"argentina.png",level:1},
+    {name:"Brasil",image:"brasil.png",level:1},
+    {name:"Chile",image:"chile.png",level:1},
+    {name:"Uruguay",image:"uruguay.png",level:1},
+    {name:"Estados Unidos",image:"estados-unidos.png",level:1},
+    {name:"Canadá",image:"canada.png",level:1},
+    {name:"México",image:"mexico.png",level:1},
+    {name:"España",image:"espana.png",level:1},
+    {name:"Francia",image:"francia.png",level:1},
+    {name:"Italia",image:"italia.png",level:1},
+    {name:"Alemania",image:"alemania.png",level:1},
+    {name:"Japón",image:"japon.png",level:1},
+    {name:"China",image:"china.png",level:1},
+    {name:"Australia",image:"australia.png",level:1},
+    {name:"Reino Unido",image:"reino-unido.png",level:1},
+
+    // NIVEL MEDIO
+    {name:"Perú",image:"peru.png",level:2},
+    {name:"Paraguay",image:"paraguay.png",level:2},
+    {name:"Bolivia",image:"bolivia.png",level:2},
+    {name:"Colombia",image:"colombia.png",level:2},
+    {name:"Ecuador",image:"ecuador.png",level:2},
+    {name:"Portugal",image:"portugal.png",level:2},
+    {name:"Grecia",image:"grecia.png",level:2},
+    {name:"Suiza",image:"suiza.png",level:2},
+    {name:"Países Bajos",image:"paises-bajos.png",level:2},
+    {name:"India",image:"india.png",level:2},
+    {name:"Corea del Sur",image:"corea-del-sur.png",level:2},
+    {name:"Egipto",image:"egipto.png",level:2},
+    {name:"Marruecos",image:"marruecos.png",level:2},
+    {name:"Turquía",image:"turquia.png",level:2},
+    {name:"Sudáfrica",image:"sudafrica.png",level:2},
+
+    // NIVEL DIFÍCIL
+    {name:"Noruega",image:"noruega.png",level:3},
+    {name:"Suecia",image:"suecia.png",level:3},
+    {name:"Finlandia",image:"finlandia.png",level:3},
+    {name:"Dinamarca",image:"dinamarca.png",level:3},
+    {name:"Islandia",image:"islandia.png",level:3},
+    {name:"Polonia",image:"polonia.png",level:3},
+    {name:"Austria",image:"austria.png",level:3},
+    {name:"Bélgica",image:"belgica.png",level:3},
+    {name:"Irlanda",image:"irlanda.png",level:3},
+    {name:"Croacia",image:"croacia.png",level:3},
+    {name:"Serbia",image:"serbia.png",level:3},
+    {name:"Ucrania",image:"ucrania.png",level:3},
+    {name:"Tailandia",image:"tailandia.png",level:3},
+    {name:"Vietnam",image:"vietnam.png",level:3},
+    {name:"Filipinas",image:"filipinas.png",level:3}
+];
+
+// .variables de juego
+
+let playerName = "";
+let startTime = 0;
+
+const LEVELS = [
+    { level: 1, label: "FÁCIL", count: 6 },
+    { level: 2, label: "MEDIO", count: 7 },
+    { level: 3, label: "DIFÍCIL", count: 7 }
+];
+
+const TOTAL = 20;
+
+let round = 0;
+let score = 0;
+let hits = 0;
+let streak = 0;
+let bestStreak = 0;
+let currentCountry = null;
+let locked = false;
+let questions = [];
+
+const $ = id => document.getElementById(id);
+
+// .funciones generales
+
+function shuffle(array) {
+    const result = [...array];
+
+    for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+    }
+
+    return result;
+}
+
+function showScreen(id) {
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    $(id).classList.add("active");
+}
+
+// .tabla de los mejores 15
+
+let rankingBanderas = [];
+
+function getLeaderboard() {
+    return rankingBanderas;
+}
+
+function saveLeaderboard(results) {
+    rankingBanderas = results;
+}
+
+function renderLeaderboard() {
+    const table = $("leaderboard");
+
+    if (!table) return;
+
+    const results = getLeaderboard();
+
+    table.innerHTML = "";
+
+    if (results.length === 0) {
+        const row = table.insertRow();
+        const cell = row.insertCell();
+
+        cell.colSpan = 5;
+        cell.textContent = "Todavía no hay resultados.";
+        cell.style.padding = "15px";
+
+        return;
+    }
+
+    results.forEach((result, index) => {
+        const row = table.insertRow();
+
+        const position = row.insertCell();
+        const name = row.insertCell();
+        const points = row.insertCell();
+        const time = row.insertCell();
+        const date = row.insertCell();
+
+        position.textContent =
+            ["🥇", "🥈", "🥉"][index] || (index + 1);
+
+        name.textContent = result.name;
+        points.textContent = result.score + "/20";
+
+        const totalSeconds = Number(result.seconds) || 0;
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+     time.textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+
+        date.textContent = result.date;
+
+        [position, name, points, time, date].forEach(cell => {
+            cell.style.padding = "12px";
+            cell.style.borderBottom = "1px solid #354263";
+        });
+
+        name.style.fontWeight = "700";
+    });
+}
+
+
+function updateBest() {
+    const results = getLeaderboard();
+
+    const best = results.length
+        ? Math.max(...results.map(result => result.score))
+        : 0;
+
+    $("best").textContent = best;
+}
+
+// .iniciar partida
+
+function startGame() {
+    playerName = $("playerName").value.trim();
+
+    if (!playerName) {
+        $("nameError").style.display = "block";
+        $("playerName").focus();
+        return;
+    }
+
+    $("nameError").style.display = "none";
+
+    if (countries.length < 4) {
+        alert("Necesitás al menos cuatro países.");
+        return;
+    }
+
+    // Elegir países distintos para cada nivel.
+  questions = [];
+
+LEVELS.forEach(group => {
+    const available = shuffle(
+        countries.filter(country =>
+            country.level === group.level
+        )
+    );
+
+    questions.push(
+        ...available.slice(0, group.count)
+    );
+});
+
+    if (questions.length !== TOTAL) {
+        alert("Revisá que haya suficientes países en cada nivel.");
+        return;
+    }
+
+    round = 0;
+    score = 0;
+    hits = 0;
+    streak = 0;
+    bestStreak = 0;
+    locked = false;
+
+    startTime = Date.now();
+
+    $("score").textContent = score;
+    $("hits").textContent = hits;
+    $("streak").textContent = streak;
+
+    showScreen("game");
+    nextQuestion();
+}
+
+// .mostrar pregunta
+
+function nextQuestion() {
+    if (round >= questions.length) {
+        finishGame();
+        return;
+    }
+
+    locked = false;
+    currentCountry = questions[round];
+
+    $("round").textContent = round + 1;
+
+    $("progress").style.width =
+        (round / questions.length * 100) + "%";
+
+    $("feedback").className = "feedback";
+    $("feedback").textContent = "";
+
+    $("next").disabled = true;
+
+    $("hint").textContent =
+        "Nivel " +
+        LEVELS[currentCountry.level - 1].label +
+        " · Elegí una respuesta.";
+
+    const flag = $("flag");
+
+    $("flagFallback").style.display = "none";
+    flag.style.display = "block";
+    flag.alt = "Bandera del país";
+
+    flag.onerror = function () {
+        flag.style.display = "none";
+        $("flagFallback").style.display = "block";
+    };
+
+    flag.src = "flags/" + currentCountry.image;
+
+    // Las opciones incorrectas son de dificultad similar.
+    const sameLevel = countries.filter(country =>
+        country.level === currentCountry.level &&
+        country.name !== currentCountry.name
+    );
+
+    const wrongAnswers = shuffle(sameLevel).slice(0, 3);
+
+    const options = shuffle([currentCountry, ...wrongAnswers]);
+
+    const box = $("answers");
+    box.innerHTML = "";
+
+    options.forEach((country, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+
+        const letter = document.createElement("span");
+        letter.className = "letter";
+        letter.textContent = ["A", "B", "C", "D"][index];
+
+        const name = document.createElement("span");
+        name.textContent = country.name;
+
+        button.append(letter, name);
+
+        button.addEventListener("click", () => {
+            chooseAnswer(country, button);
+        });
+
+        box.appendChild(button);
+    });
+}
+
+// .final de partida y juego
+
+function finishGame() {
+    $("progress").style.width = "100%";
+
+    const elapsedSeconds = Math.round(
+        (Date.now() - startTime) / 1000
+    );
+
+    const results = getLeaderboard();
+
+    results.push({
+        name: playerName,
+        score: score,
+        seconds: elapsedSeconds,
+        date: new Date().toLocaleDateString("es-AR"),
+        created: Date.now()
+    });
+
+    // Primero más puntos; en empate, menor tiempo.
+    results.sort((a, b) =>
+        b.score - a.score ||
+        a.seconds - b.seconds ||
+        a.created - b.created
+    );
+
+    saveLeaderboard(results.slice(0, 15));
+
+    $("finalScore").textContent = score;
+
+    $("resultMessage").textContent =
+        playerName + ", terminaste el desafío en " +
+        elapsedSeconds + " segundos. " +
+       (score === 20
+    ? "¡Puntaje perfecto! ¡Increíble!"
+    : score >= 14
+        ? "¡Excelente resultado!"
+        : score >= 8
+            ? "¡Buen trabajo! Seguí practicando."
+            : "¡Volvé a intentarlo para superar tu marca.");
+
+   $("resultIcon").textContent =
+    score === 20 ? "🏆" : score >= 14 ? "🌟" : "🌎";
+
+$("resultTitle").textContent =
+    score === 20 ? "¡Perfecto!" :
+    score >= 14 ? "¡Excelente trabajo!" :
+    score >= 8 ? "¡Buen recorrido!" :
+    "¡A seguir explorando!";
+
+    renderLeaderboard();
+    updateBest();
+
+    showScreen("result");
+}
+
+// .responder preguntas
+
+function chooseAnswer(selected, selectedButton) {
+    if (locked) return;
+
+    locked = true;
+
+    const correct = selected.name === currentCountry.name;
+
+    const buttons = document.querySelectorAll(".answer");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        // Identifica la respuesta correcta por su texto.
+        if (button.lastElementChild.textContent === currentCountry.name) {
+            button.classList.add("correct");
+        }
+    });
+
+    const feedback = $("feedback");
+
+    if (correct) {
+        score++;
+        hits++;
+        streak++;
+
+        if (streak > bestStreak) {
+            bestStreak = streak;
+        }
+
+        selectedButton.classList.add("correct");
+
+        feedback.className = "feedback show good";
+        feedback.textContent =
+            "🎉 ¡Correcto! Sumaste un punto. ¡Vas muy bien!";
+
+    } else {
+        streak = 0;
+
+        selectedButton.classList.add("wrong");
+
+        feedback.className = "feedback show bad";
+        feedback.textContent =
+            "💡 ¡Casi! La respuesta correcta era " +
+            currentCountry.name + ". ¡Vamos por la siguiente!";
+    }
+
+    $("score").textContent = score;
+    $("hits").textContent = hits;
+    $("streak").textContent = streak;
+
+    $("hint").textContent = correct
+        ? "¡Bien hecho! Ya podés continuar."
+        : "¡No te rindas! Todavía podés sumar puntos.";
+
+    $("next").disabled = false;
+
+    $("next").textContent =
+        round + 1 === questions.length
+            ? "Ver resultados 🏆"
+            : "Siguiente ➜";
+}
+
+// .botones
+
+$("start").addEventListener("click", startGame);
+
+$("playerName").addEventListener("keydown", event => {
+    if (event.key === "Enter") startGame();
+});
+
+$("next").addEventListener("click", () => {
+    if (!locked) return;
+
+    round++;
+    nextQuestion();
+});
+
+$("replay").addEventListener("click", startGame);
+
+$("homeButton").addEventListener("click", () => {
+    showScreen("home");
+});
+
+// Limpiar los resultados cada vez que se abre o recarga la página.
+window.addEventListener("pageshow", () => {
+
+    rankingBanderas = [];
+    playerName = "";
+
+    $("playerName").value = "";
+    $("nameError").style.display = "none";
+
+    renderLeaderboard();
+    updateBest();
+
+});
+
+</script>
+</body>
+</html>
+

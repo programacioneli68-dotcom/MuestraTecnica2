@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Desafío de Pósters de Cine</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Pantalla de Inicio Minimalista -->
+<div id="startScreen" class="overlay-screen">
+  <div class="hero-content">
+    <h1>¿De qué película es este póster?</h1>
+    <button id="startGameBtn" class="btnCinematicPrimary">Comenzar Desafío</button>
+  </div>
+</div>
+
+<!-- Modal de Modo Administrador -->
+<div id="adminModal" class="overlay-screen" style="display: none;">
+  <div class="hero-content" style="max-width: 440px; width: 92%;">
+    <h2>Panel de Administración</h2>
+    <div id="adminLoginSection" style="width: 100%;">
+      <p style="color: var(--muted); margin: 0 0 12px 0; text-align: left; font-size: 14px;">Ingrese contraseña de acceso:</p>
+      <input type="password" id="adminPassInput" class="custom-input" placeholder="Contraseña..." autocomplete="current-password">
+      <div style="display:flex; gap:12px; width:100%; margin-top: 14px;">
+        <button id="adminSubmitBtn" class="btnCinematicPrimary" style="flex:1; padding: 14px;">Ingresar</button>
+        <button id="adminCancelBtn" class="btnCinematicSec" style="flex:1; padding: 14px;">Cancelar</button>
+      </div>
+    </div>
+    <div id="adminDashboardSection" style="display: none; width: 100%;">
+      <p style="color: var(--muted); margin: 0 0 8px 0; text-align: left; font-size: 13px; font-weight: 600;">Gestión de Ranking:</p>
+      <div id="adminRankingList" style="max-height: 200px; overflow-y: auto; width: 100%; margin-bottom: 14px; border: 1px solid var(--border); border-radius: 12px; padding: 10px; text-align: left; background: rgba(0,0,0,0.2);"></div>
+      <div style="display:flex; gap:10px; width:100%;">
+        <button id="clearRankingBtn" class="btnCinematicPrimary" style="background: #ef4444; flex:1; padding: 12px; font-size: 14px;">Limpiar Todo</button>
+        <button id="adminCloseBtn" class="btnCinematicSec" style="flex:1; padding: 12px; font-size: 14px;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pantalla Principal Fullscreen Integrada -->
+<div class="cinematic-app">
+  
+  <!-- Cabecera Superior con Estadísticas Centradas -->
+  <header class="app-header">
+    <div style="width: 88px;"></div> <!-- Elemento fantasma para equilibrar el espacio izquierdo -->
+    <div class="game-stats-pill">
+      <span>⏱️ <b id="gameTimer">0:00</b></span>
+      <span class="divider"></span>
+      <span>⭐ <b id="score">0</b> pts</span>
+      <span class="divider"></span>
+      <span>🎯 Ronda: <b id="round">1</b>/<b id="total">10</b></span>
+      <span class="divider"></span>
+      <span>💎 Valor: <b id="roundValue">5</b> pts</span>
+    </div>
+    <div class="header-actions">
+      <button id="settingsBtn" class="icon-btn" title="Modo Admin">⚙️</button>
+      <button id="themeToggle" class="icon-btn" title="Cambiar Tema">🌙</button>
+    </div>
+  </header>
+
+  <!-- Cuerpo de Juego Dinámico -->
+  <main class="game-workspace">
+    
+    <!-- Zona Visual / Izquierda -->
+    <section class="stage-section">
+      <div class="imgBox" id="imgBoxContainer">
+        <img id="posterBase" class="posterBase" src="" alt="Póster de película">
+        <div id="posterCover" class="posterCover"></div>
+        <div id="posterLoader" class="posterLoader">
+          <div class="spinner"></div>
+        </div>
+      </div>
+      <button id="hint" class="btnCinematicSec">Ayuda</button>
+      <div id="extra" class="extra"></div>
+    </section>
+
+    <!-- Zona Interactiva / Derecha -->
+    <section class="interactive-section">
+      <div id="questionContainer" style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+        <div>
+          <div id="instructionBox" class="instruction-box">
+            Solo es visible una pequeña porción del poster. Intenta adivinar de cuál se trata:
+          </div>
+          <div id="answers" class="ans-grid"></div>
+        </div>
+        
+        <!-- Controles integrados -->
+        <div class="controls-bar" id="controlsSection">
+          <span id="status" style="color: var(--muted); font-size: 14px;"></span>
+          <button id="next" class="btnCinematicPrimary" disabled>Siguiente</button>
+        </div>
+      </div>
+
+      <!-- Resumen Visual Post-Partida -->
+      <div id="gameSummary" style="display:none; width:100%; height:100%; overflow-y:auto; padding-right:4px;">
+        <h3 style="margin: 0 0 12px 0; font-size: 18px; color: var(--text);">
+          Resumen de tu partida
+        </h3>
+        <div id="summaryGrid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap:12px; padding-bottom: 20px;"></div>
+        <button id="nextSummary" class="btnCinematicPrimary" style="width:100%; margin-top:12px;">Nueva partida</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Panel de Ranking Lateral Derecho -->
+  <aside id="ranking" class="ranking-panel"></aside>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
