@@ -1,0 +1,72 @@
+[
+  {
+    "grupo": 1,
+    "titulo": "Juego del Ahorcado",
+    "descripcion": "Clásico juego del ahorcado.",
+    "integrantes": ["Santi Novoa", "Mateo Scornaienqui"],
+    "img": "ahorcado.png",
+    "link": "proyectos/grupo1/index.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+  {
+    "grupo": 2,
+    "titulo": "Adivina la canción",
+    "descripcion": "Escuchá un fragmento, elegí la respuesta correcta y sumá puntos.",
+    "integrantes": ["Dana Vergara", "Nicole Pascheta"],
+    "img": "adivina_cancion.png",
+    "link": "proyectos/grupo2/generos.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+  {
+    "grupo": 3,
+    "titulo": "Películas",
+    "descripcion": "Juego para adivinar qué película es.",
+    "integrantes": ["Juan Cruz Rodriguez"],
+    "img": "peliculas.jpg",
+    "link": "proyectos/grupo3/index.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+   {
+    "grupo": 4,
+    "titulo": "Pokemon",
+    "descripcion": "Juego para adivinar qué personaje de pokemon es.",
+    "integrantes": ["Juan Cruz Rodriguez"],
+    "img": "pokemon.jpg",
+    "link": "proyectos/grupo4/pokemon.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+  {
+    "grupo": 5,
+    "titulo": "Cuanto sabes del mundo",
+    "descripcion": "Adivina de que pais es cada bandera.",
+    "integrantes": ["Valentina Meneses","Diego Quesada"],
+    "img": "banderas.png",
+    "link": "proyectos/grupo5/banderas.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+  {
+    "grupo": 6,
+    "titulo": "Quien es el Pockemon",
+    "descripcion": "Adivina el Pokemon y gana puntos por cada acierto, tambien podes comprar en la tienda.",
+    "integrantes": ["Daniel Monhaiser","Tobias Villalba"],
+    "img": "pokemon1.png",
+    "link": "proyectos/grupo6/index.html",
+    "categoria": "Juegos",
+    "enabled": true
+  },
+  {
+    "grupo": 7,
+    "titulo": "Quien es el Personaje",
+    "descripcion": "Te animas a adivinar el Personaje de videoJuegos.",
+    "integrantes": ["Maxi Ugarnes","Luciano Trebucq"],
+    "img": "trivia.png",
+    "link": "proyectos/grupo7/index.html",
+    "categoria": "Juegos",
+    "enabled": true
+  }
+]
