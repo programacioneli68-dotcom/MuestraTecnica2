@@ -67,6 +67,6 @@
     "img": "trivia.png",
     "link": "proyectos/grupo7/index.html",
     "categoria": "Juegos",
-    "enabled": true
+    "enabled": false
   }
 ]
