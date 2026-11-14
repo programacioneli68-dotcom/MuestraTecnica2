@@ -1,0 +1,394 @@
+﻿id,nombre,categoria,modo,url,busqueda_steam
+70,Half-Life,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/70/library_600x900.jpg,
+220,Half-Life 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/220/library_600x900.jpg,
+400,Portal,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/400/library_600x900.jpg,
+620,Portal 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/620/library_600x900.jpg,
+12120,Grand Theft Auto: San Andreas,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12120/library_600x900.jpg,
+12210,Grand Theft Auto IV,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12210/library_600x900.jpg,
+12140,Max Payne,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12140/library_600x900.jpg,
+12150,Max Payne 2: The Fall of Max Payne,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12150/library_600x900.jpg,
+10,Counter-Strike 1.6,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/10/library_600x900.jpg,
+730,Counter-Strike 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/730/library_600x900.jpg,
+242550,Rayman Legends,classic,cover,https://images.launchbox-app.com/9b0be527-9e1e-4068-ad1d-cd4aa47ddd64.png,
+311210,Call of Duty: Black Ops III,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/311210/library_600x900.jpg,
+2280,DOOM (1993),classic,cover,https://images.launchbox-app.com/4c0989d1-93cf-452c-a029-b3aa6a73c534.jpg,
+813780,Age of Empires II: Definitive Edition,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/813780/library_600x900.jpg,
+550,Left 4 Dead 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/550/library_600x900.jpg,
+440,Team Fortress 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg,
+8870,BioShock Infinite,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/8870/library_600x900.jpg,
+22380,Fallout: New Vegas,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/22380/library_600x900.jpg,
+489830,The Elder Scrolls V: Skyrim Special Edition,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/489830/library_600x900.jpg,
+33230,Assassin’s Creed II,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/33230/library_600x900.jpg,
+220240,Far Cry 3,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/220240/library_600x900.jpg,
+71340,Sonic Generations,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/71340/library_600x900.jpg,
+584400,Sonic Mania,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/584400/library_600x900.jpg,
+413150,Stardew Valley,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/413150/library_600x900.jpg,
+105600,Terraria,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/105600/library_600x900.jpg,
+391540,Undertale,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/391540/library_600x900.jpg,
+235460,Metal Gear Rising: Revengeance,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/235460/library_600x900.jpg,
+203160,Tomb Raider (2013),classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/203160/library_600x900.jpg,
+208650,Batman: Arkham Knight,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/208650/library_600x900.jpg,
+99999901,Super Mario Odyssey,classic,cover,https://images.launchbox-app.com/5de2ee6c-bc20-438c-a443-3ad1375cddee.png,
+99999902,The Legend of Zelda: Breath of the Wild,classic,cover,https://images.launchbox-app.com/b63234ca-e5de-4aae-95ae-c7a8d43dfdbb.jpg,
+271590,Grand Theft Auto V,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/271590/library_600x900.jpg,
+1174180,Red Dead Redemption 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1174180/library_600x900.jpg,
+292030,The Witcher 3: Wild Hunt,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/292030/library_600x900.jpg,
+1091500,Cyberpunk 2077,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1091500/library_600x900.jpg,
+1245620,Elden Ring,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1245620/library_600x900.jpg,
+814380,Sekiro: Shadows Die Twice,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/814380/library_600x900.jpg,
+374320,Dark Souls III,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/374320/library_600x900.jpg,
+2050650,Resident Evil 4,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2050650/library_600x900.jpg,
+883710,Resident Evil 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/883710/library_600x900.jpg,
+601150,Devil May Cry 5,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/601150/library_600x900.jpg,
+391220,Rise of the Tomb Raider,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/391220/library_600x900.jpg,
+750920,Shadow of the Tomb Raider,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/750920/library_600x900.jpg,
+1593500,God of War,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1593500/library_600x900.jpg,
+1145360,Hades,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1145360/library_600x900.jpg,
+367520,Hollow Knight,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/367520/library_600x900.jpg,
+504230,Celeste,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/504230/library_600x900.jpg,
+1237320,Sonic Frontiers,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1237320/library_600x900.jpg,
+268910,Cuphead,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/268910/library_600x900.jpg,
+424840,Little Nightmares,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/424840/library_600x900.jpg,
+990080,Hogwarts Legacy,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/990080/library_600x900.jpg,
+1086940,Baldur’s Gate 3,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1086940/library_600x900.jpg,
+1966720,Lethal Company,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1966720/library_600x900.jpg,
+1142710,Total War: WARHAMMER III,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1142710/library_600x900.jpg,
+255710,Cities: Skylines,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/255710/library_600x900.jpg,
+504370,Battlerite,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/504370/library_600x900.jpg,
+252490,Rust,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/252490/library_600x900.jpg,
+108600,Project Zomboid,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/108600/library_600x900.jpg,
+1151640,Horizon Zero Dawn,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1151640/library_600x900.jpg,
+1172470,Apex Legends,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1172470/library_600x900.jpg,
+1817070,Marvel’s Spider-Man Remastered,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1817070/library_600x900.jpg,
+1063730,New World,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1063730/library_600x900.jpg,
+379720,DOOM (2016),modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/379720/library_600x900.jpg,
+782330,DOOM Eternal,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/782330/library_600x900.jpg,
+99999801,Plants vs. Zombies 2,mobile,icon,https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c2/22/70/c222704d-1e90-5b8b-960a-a45b354a803e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/1024x1024bb.png,
+99999802,Subway Surfers,mobile,icon,https://play-lh.googleusercontent.com/G1eIJ3yor1yW20izrYjOfCzHgVkRtewlfPFG9CEFTHzSI2m0Lwds_Y1xYgeg21CFok_UXrol-ox2IwqL4JMrLQ=w512-h512,
+99999803,Clash of Clans,mobile,icon,https://play-lh.googleusercontent.com/sFmWfYbYp_2ea7VRMTnwd3gjIBrPGXHj_d_ab1_k1q1p2OMk4riGMF1vqxdhONOtTYOt_BVpk7a4AYcKU68LNGQ=w512-h512,
+99999804,Brawl Stars,mobile,icon,https://play-lh.googleusercontent.com/QNLPDSxg6A4xz5pRQW30Fec-Q9JtyBe_oNIZ84ssgmaX-06nKgoKu9qbwq1ug1jwdqSD17eZ8P_Oz_IshakH5g=w512-h512,
+12100,Grand Theft Auto III,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12100/library_600x900.jpg,
+12110,Grand Theft Auto: Vice City,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/12110/library_600x900.jpg,
+204100,Max Payne 3,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/204100/library_600x900.jpg,
+207490,Rayman Origins,classic,cover,https://images.launchbox-app.com/d47866df-92d3-4690-b819-23d80b5d3b71.jpg,
+99999701,Uncharted: Drake's Fortune,classic,cover,https://images.launchbox-app.com/d9d7ce9b-d450-4d80-b0c8-df4cce14b8f6.jpg,
+99999702,Uncharted 2: Among Thieves,classic,cover,https://images.launchbox-app.com/cbfc0edb-730a-48ed-8fd7-e6b3e2e9107b.jpg,
+99999703,Uncharted 3: Drake's Deception,classic,cover,https://images.launchbox-app.com/e47f8a34-3d98-475a-a9fa-33ea743cf2fb.jpg,
+2300,DOOM II,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/2300/library_600x900.jpg,
+409710,BioShock Remastered,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/409710/library_600x900.jpg,
+409720,BioShock 2 Remastered,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/409720/library_600x900.jpg,
+35140,Batman: Arkham Asylum,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/35140/library_600x900.jpg,
+200260,Batman: Arkham City,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/200260/library_600x900.jpg,
+48190,Assassin’s Creed Brotherhood,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/48190/library_600x900.jpg,
+298110,Far Cry 4,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/298110/library_600x900.jpg,
+552520,Far Cry 5,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/552520/library_600x900.jpg,
+570940,Dark Souls Remastered,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/570940/library_600x900.jpg,
+335300,Dark Souls II: Scholar of the First Sin,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/335300/library_600x900.jpg,
+952060,Resident Evil 3,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/952060/library_600x900.jpg,
+418370,Resident Evil 7: Biohazard,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/418370/library_600x900.jpg,
+1378990,Crash Bandicoot 4: It's About Time,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1378990/library_600x900.jpg,
+20920,The Witcher 2: Assassins of Kings,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/20920/library_600x900.jpg,
+2322010,God of War Ragnarök,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2322010/library_600x900.jpg,
+99999601,Sly Cooper and the Thievius Raccoonus,classic,cover,https://images.launchbox-app.com/57581aae-9f5a-42a2-8f7e-44cc9a90a969.jpg,
+99999602,Sly 2: Band of Thieves,classic,cover,https://images.launchbox-app.com/08f70f05-c7a6-47d4-95f9-7509de9da429.jpg,
+99999603,Sly 3: Honor Among Thieves,classic,cover,https://images.launchbox-app.com/ad1c6db5-3312-4b98-9588-d8fd172e1a5b.jpg,
+99999604,Sly Cooper: Thieves in Time,modern,cover,https://images.launchbox-app.com/b1e8ddf4-23be-4181-9fe2-8a9c1ed97b03.jpg,
+99999501,Jak and Daxter: The Precursor Legacy,classic,cover,https://images.launchbox-app.com/r2_e43bc828-de98-43af-88a2-215b73ff0203.png,
+99999502,Jak II,classic,cover,https://images.launchbox-app.com/r2_4dddc550-94db-45e4-8a01-7648e7594a6e.png,
+99999503,Jak 3,classic,cover,https://images.launchbox-app.com/6d2262cc-4262-4461-a1f8-b700b2ed79a4.jpg,
+99999401,Ratchet & Clank,classic,cover,https://images.launchbox-app.com/85d0d853-1edf-4086-a5b5-281edcb3f9ac.jpg,
+99999402,Ratchet & Clank: Going Commando,classic,cover,https://images.launchbox-app.com/1027ee53-c3ea-43e4-8ab8-795f6e63e7a5.png,
+99999403,Ratchet & Clank: Up Your Arsenal,classic,cover,https://images.launchbox-app.com/60cddfc3-1d2a-471c-809f-fcee29d370c0.jpg,
+99999301,LittleBigPlanet,classic,cover,https://images.launchbox-app.com/c57b9e6a-dbf7-483f-8200-e9ccac818cf5.jpg,
+99999302,LittleBigPlanet 2,classic,cover,https://images.launchbox-app.com/a9d4dd35-af61-4041-94a4-89dc209f9a5b.jpg,
+99999303,LittleBigPlanet 3,classic,cover,https://images.launchbox-app.com/09210685-a328-4f2c-b76d-953cac944f6d.jpg,
+99999201,Twisted Metal,classic,cover,https://images.launchbox-app.com/adccd1db-bb7a-47fd-bc5a-fb3f62dc3881.png,
+99999202,Twisted Metal: Black,classic,cover,https://images.launchbox-app.com/e911b569-45c2-4516-ac8f-36d83cae3ecc.jpg,
+99999101,inFAMOUS,classic,cover,https://images.launchbox-app.com/d22e2edb-c0be-4062-8e2e-5ae3ee108cd0.jpg,
+99999102,inFAMOUS 2,classic,cover,https://media.cibby.app/games/14bb9d91-74cd-47e6-a814-4c518a768405/media/3b6a767d-166c-4271-acc3-9d6bb9bdcce2.jpg,
+99999103,inFAMOUS: Second Son,modern,cover,https://images.launchbox-app.com/e010c903-085e-483a-b156-0bc2cde12c41.jpg,
+99999001,God of War (2005),classic,cover,https://images.launchbox-app.com/e0525716-30ba-4c1d-8522-669e10bf21f4.jpg,
+99999002,God of War II,classic,cover,https://images.launchbox-app.com/2b06034c-9d15-4bdd-8e20-b564027cd957.jpg,
+99999003,God of War III,classic,cover,https://images.launchbox-app.com/43250330-b1dc-40c7-ac61-7bac745c5ace.jpg,
+99999704,Uncharted 4: A Thief’s End,modern,cover,https://images.launchbox-app.com/07f1ca51-57e2-4e7e-859b-fd03ebd4f7fe.jpg,
+213610,Sonic Adventure 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/213610/library_600x900.jpg,
+71250,Sonic Adventure DX,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/71250/library_600x900.jpg,
+1895880,Ratchet & Clank: Rift Apart,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1895880/library_600x900.jpg,
+15100,Assassin’s Creed,classic,cover,https://images.launchbox-app.com/2055f844-6016-4884-9369-d1e0ae139239.jpg,
+911400,Assassin’s Creed III Remastered,classic,cover,https://www.platekompaniet.no/pimcorecdn/Products/Games/SPILL/ST/ac3r_ps4_packshot_2d_uk.jpg,
+242050,Assassin’s Creed IV: Black Flag,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/242050/library_600x900.jpg,
+289650,Assassin’s Creed Unity,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/289650/library_600x900.jpg,
+368500,Assassin’s Creed Syndicate,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/368500/library_600x900.jpg,
+582160,Assassin’s Creed Origins,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/582160/library_600x900.jpg,
+812140,Assassin’s Creed Odyssey,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/812140/library_600x900.jpg,
+2208920,Assassin’s Creed Valhalla,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2208920/library_600x900.jpg,
+8190,Just Cause 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/8190/library_600x900.jpg,
+225540,Just Cause 3,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/225540/library_600x900.jpg,
+517630,Just Cause 4,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/517630/library_600x900.jpg,
+307690,Sleeping Dogs: Definitive Edition,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/307690/library_600x900.jpg,
+55230,Saints Row: The Third,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/55230/library_600x900.jpg,
+236870,HITMAN,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/236870/library_600x900.jpg,
+863550,HITMAN 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/863550/library_600x900.jpg,
+1659040,HITMAN World of Assassination,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1659040/library_600x900.jpg,
+13570,Tom Clancy’s Splinter Cell: Chaos Theory,classic,cover,https://raw.githubusercontent.com/xemu-project/xdb/master/titles/US/056/cover_front.jpg,
+33220,Tom Clancy’s Splinter Cell: Conviction,classic,cover,https://www.thevideogamecompany.com/cdn/shop/products/tom-clancys-splinter-cell-conviction-microsoft-xbox-360-008888523840-cover-art.jpg?v=1661463563,
+235600,Tom Clancy’s Splinter Cell: Blacklist,modern,cover,https://images.launchbox-app.com/51c3f48d-0102-4480-ab26-cfdca70abe05.jpg,
+108710,Alan Wake,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/108710/library_600x900.jpg,
+870780,Control,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/870780/library_600x900.jpg,
+474960,Quantum Break,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/474960/library_600x900.jpg,
+268050,The Evil Within,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/268050/library_600x900.jpg,
+601430,The Evil Within 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/601430/library_600x900.jpg,
+238320,Outlast,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/238320/library_600x900.jpg,
+414700,Outlast 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/414700/library_600x900.jpg,
+17470,Dead Space,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/17470/library_600x900.jpg,
+1693980,Dead Space,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1693980/library_600x900.jpg,
+47780,Dead Space 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/47780/library_600x900.jpg,
+1238060,Dead Space 3,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1238060/library_600x900.jpg,
+286690,Metro 2033 Redux,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/286690/library_600x900.jpg,
+287390,Metro: Last Light Redux,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/287390/library_600x900.jpg,
+412020,Metro Exodus,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/412020/library_600x900.jpg,
+1328670,Mass Effect Legendary Edition,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1328670/library_600x900.jpg,
+1222690,Dragon Age: Inquisition,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1222690/library_600x900.jpg,
+22300,Fallout 3,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/22300/library_600x900.jpg,
+377160,Fallout 4,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/377160/library_600x900.jpg,
+1151340,Fallout 76,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1151340/library_600x900.jpg,
+1888930,The Last of Us Part I,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1888930/library_600x900.jpg,
+2215430,Ghost of Tsushima DIRECTOR’S CUT,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2215430/library_600x900.jpg,
+1259420,Days Gone,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1259420/library_600x900.jpg,
+1222140,Detroit: Become Human,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1222140/library_600x900.jpg,
+1190460,Death Stranding,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1190460/library_600x900.jpg,
+1817190,Marvel’s Spider-Man: Miles Morales,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1817190/library_600x900.jpg,
+2651280,Marvel’s Spider-Man 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2651280/library_600x900.jpg,
+1954200,Kena: Bridge of Spirits,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1954200/library_600x900.jpg,
+1332010,Stray,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1332010/library_600x900.jpg,
+1426210,It Takes Two,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1426210/library_600x900.jpg,
+1222700,A Way Out,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1222700/library_600x900.jpg,
+1225570,Unravel Two,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1225570/library_600x900.jpg,
+304430,INSIDE,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/304430/library_600x900.jpg,
+48000,LIMBO,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/48000/library_600x900.jpg,
+261570,Ori and the Blind Forest,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/261570/library_600x900.jpg,
+1057090,Ori and the Will of the Wisps,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1057090/library_600x900.jpg,
+250760,Shovel Knight: Treasure Trove,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/250760/library_600x900.jpg,
+253230,A Hat in Time,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/253230/library_600x900.jpg,
+607080,Psychonauts 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/607080/library_600x900.jpg,
+1671210,Deltarune,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1671210/library_600x900.jpg,
+319510,Five Nights at Freddy’s,classic,cover,https://images.launchbox-app.com/07b18cec-0e0c-4ae3-a453-c1152a3d9528.jpg,
+332800,Five Nights at Freddy’s 2,classic,cover,https://images.launchbox-app.com/c549db73-9c03-4736-9398-a00a653c51d7.jpg,
+354140,Five Nights at Freddy’s 3,classic,cover,https://cdn.now.gg/apps-content/com.nowgg.h5.pub501.app51769/game-tiles/five-nights-at-freddy-s-3.jpg,
+388090,Five Nights at Freddy’s 4,classic,cover,https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/388090/library_600x900.jpg,
+945360,Among Us,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/945360/library_600x900.jpg,
+322330,Don’t Starve Together,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/322330/library_600x900.jpg,
+242760,The Forest,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/242760/library_600x900.jpg,
+1326470,Sons of the Forest,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1326470/library_600x900.jpg,
+264710,Subnautica,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/264710/library_600x900.jpg,
+848450,Subnautica: Below Zero,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/848450/library_600x900.jpg,
+892970,Valheim,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/892970/library_600x900.jpg,
+346110,ARK: Survival Evolved,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/346110/library_600x900.jpg,
+1721470,Poppy Playtime,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1721470/library_600x900.jpg,
+2379780,Balatro,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2379780/library_600x900.jpg,
+289070,Sid Meier’s Civilization VI,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/289070/library_600x900.jpg,
+1466860,Age of Empires IV,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1466860/library_600x900.jpg,
+227300,Euro Truck Simulator 2,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/227300/library_600x900.jpg,
+1293830,Forza Horizon 4,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1293830/library_600x900.jpg,
+1551360,Forza Horizon 5,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1551360/library_600x900.jpg,
+548430,Deep Rock Galactic,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/548430/library_600x900.jpg,
+637100,Sonic Forces,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/637100/library_600x900.jpg,
+700001,Half-Life: Opposing Force,classic,cover,steam-search:Half-Life: Opposing Force,Half-Life: Opposing Force
+700002,Half-Life: Blue Shift,classic,cover,steam-search:Half-Life: Blue Shift,Half-Life: Blue Shift
+700003,Half-Life 2: Episode One,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/380/library_600x900.jpg,
+700004,Half-Life 2: Episode Two,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/420/library_600x900.jpg,
+700005,Counter-Strike: Condition Zero,classic,cover,steam-search:Counter-Strike: Condition Zero,Counter-Strike: Condition Zero
+700006,Counter-Strike: Source,classic,cover,steam-search:Counter-Strike: Source,Counter-Strike: Source
+700007,Day of Defeat: Source,classic,cover,steam-search:Day of Defeat: Source,Day of Defeat: Source
+700008,Garry's Mod,classic,cover,steam-search:Garry's Mod,Garry's Mod
+700009,Dota 2,modern,cover,steam-search:Dota 2,Dota 2
+700010,Quake,classic,cover,steam-search:Quake,Quake
+700011,Quake II,classic,cover,steam-search:Quake II,Quake II
+700012,Quake Live,classic,cover,steam-search:Quake Live,Quake Live
+700013,Wolfenstein 3D,classic,cover,steam-search:Wolfenstein 3D,Wolfenstein 3D
+700014,Return to Castle Wolfenstein,classic,cover,steam-search:Return to Castle Wolfenstein,Return to Castle Wolfenstein
+700015,Duke Nukem 3D: 20th Anniversary World Tour,classic,cover,steam-search:Duke Nukem 3D: 20th Anniversary World Tour,Duke Nukem 3D: 20th Anniversary World Tour
+700016,Heretic: Shadow of the Serpent Riders,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/2390/library_600x900.jpg,
+700017,The Ultimate DOOM,classic,cover,https://cdn.mobygames.com/606b750a-abe7-11ed-af3d-02420a00012f.webp,
+700018,DOOM 64,classic,cover,steam-search:DOOM 64,DOOM 64
+700019,Serious Sam HD: The First Encounter,classic,cover,steam-search:Serious Sam HD: The First Encounter,Serious Sam HD: The First Encounter
+700020,Serious Sam HD: The Second Encounter,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/41010/library_600x900.jpg,
+700021,Sonic CD,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/200940/library_600x900.jpg,
+700022,Sonic the Hedgehog 4 - Episode I,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/202530/library_600x900.jpg,
+700023,Sonic the Hedgehog 4 - Episode II,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/212480/library_600x900.jpg,
+700025,Mega Man 11,modern,cover,steam-search:Mega Man 11,Mega Man 11
+700028,DRAGON BALL XENOVERSE 2,modern,cover,steam-search:DRAGON BALL XENOVERSE 2,DRAGON BALL XENOVERSE 2
+700029,DRAGON BALL FighterZ,modern,cover,steam-search:DRAGON BALL FighterZ,DRAGON BALL FighterZ
+700030,DRAGON BALL Z: KAKAROT,modern,cover,steam-search:DRAGON BALL Z: KAKAROT,DRAGON BALL Z: KAKAROT
+700031,DRAGON BALL: Sparking! ZERO,modern,cover,steam-search:DRAGON BALL: Sparking! ZERO,DRAGON BALL: Sparking! ZERO
+700033,NARUTO SHIPPUDEN: Ultimate Ninja STORM 4,modern,cover,steam-search:NARUTO SHIPPUDEN: Ultimate Ninja STORM 4,NARUTO SHIPPUDEN: Ultimate Ninja STORM 4
+700034,The Hinokami Chronicles,modern,cover,steam-search:Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles,Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles
+700035,Ultra Street Fighter IV,classic,cover,steam-search:Ultra Street Fighter IV,Ultra Street Fighter IV
+700036,Street Fighter V,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/310950/library_600x900.jpg,
+700037,Street Fighter 6,modern,cover,steam-search:Street Fighter 6,Street Fighter 6
+700038,TEKKEN 7,modern,cover,steam-search:TEKKEN 7,TEKKEN 7
+700039,TEKKEN 8,modern,cover,steam-search:TEKKEN 8,TEKKEN 8
+700040,Mortal Kombat X,modern,cover,steam-search:Mortal Kombat X,Mortal Kombat X
+700041,Mortal Kombat 11,modern,cover,steam-search:Mortal Kombat 11,Mortal Kombat 11
+700042,Mortal Kombat 1,modern,cover,steam-search:Mortal Kombat 1,Mortal Kombat 1
+700043,GUILTY GEAR -STRIVE-,modern,cover,steam-search:GUILTY GEAR -STRIVE-,GUILTY GEAR -STRIVE-
+700044,SOULCALIBUR VI,modern,cover,steam-search:SOULCALIBUR VI,SOULCALIBUR VI
+700045,Injustice 2,modern,cover,steam-search:Injustice 2,Injustice 2
+700046,THE KING OF FIGHTERS XV,modern,cover,steam-search:THE KING OF FIGHTERS XV,THE KING OF FIGHTERS XV
+700047,Marvel vs. Capcom: Infinite,modern,cover,steam-search:Marvel vs. Capcom: Infinite,Marvel vs. Capcom: Infinite
+700048,EA SPORTS FIFA 23,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1811260/library_600x900.jpg,
+700049,EA SPORTS FC 24,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2195250/library_600x900.jpg,
+700051,NBA 2K24,modern,cover,https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2338770/library_600x900.jpg,
+700052,Tony Hawk's Pro Skater 1 + 2,modern,cover,https://images.launchbox-app.com//885b403b-f8d5-4899-818d-e8609af456f5.jpg,
+700053,DiRT Rally 2.0,modern,cover,steam-search:DiRT Rally 2.0,DiRT Rally 2.0
+700054,Assetto Corsa,classic,cover,steam-search:Assetto Corsa,Assetto Corsa
+700055,Assetto Corsa Competizione,modern,cover,steam-search:Assetto Corsa Competizione,Assetto Corsa Competizione
+700056,Need for Speed Heat,modern,cover,steam-search:Need for Speed Heat,Need for Speed Heat
+700057,Need for Speed Payback,modern,cover,steam-search:Need for Speed Payback,Need for Speed Payback
+700058,Need for Speed Hot Pursuit Remastered,modern,cover,steam-search:Need for Speed Hot Pursuit Remastered,Need for Speed Hot Pursuit Remastered
+700059,Burnout Paradise Remastered,modern,cover,steam-search:Burnout Paradise Remastered,Burnout Paradise Remastered
+700060,Wreckfest,modern,cover,steam-search:Wreckfest,Wreckfest
+700061,SnowRunner,modern,cover,steam-search:SnowRunner,SnowRunner
+700062,F1 23,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2108330/library_600x900.jpg,
+700063,Mafia: Definitive Edition,modern,cover,steam-search:Mafia: Definitive Edition,Mafia: Definitive Edition
+700064,Mafia II (Classic),classic,cover,steam-search:Mafia II (Classic),Mafia II (Classic)
+700065,Mafia III: Definitive Edition,modern,cover,steam-search:Mafia III: Definitive Edition,Mafia III: Definitive Edition
+700066,L.A. Noire,classic,cover,steam-search:L.A. Noire,L.A. Noire
+700067,Bully: Scholarship Edition,classic,cover,steam-search:Bully: Scholarship Edition,Bully: Scholarship Edition
+700068,Yakuza 0,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/638970/library_600x900.jpg,
+700069,Yakuza Kiwami,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/834530/library_600x900.jpg,
+700070,Yakuza Kiwami 2,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/927380/library_600x900.jpg,
+700071,Like a Dragon: Ishin!,modern,cover,steam-search:Like a Dragon: Ishin!,Like a Dragon: Ishin!
+700073,Bayonetta,modern,cover,steam-search:Bayonetta,Bayonetta
+700074,DmC: Devil May Cry,classic,cover,steam-search:DmC: Devil May Cry,DmC: Devil May Cry
+700075,Devil May Cry 4 Special Edition,modern,cover,steam-search:Devil May Cry 4 Special Edition,Devil May Cry 4 Special Edition
+700076,NieR:Automata,modern,cover,steam-search:NieR:Automata,NieR:Automata
+700077,NieR Replicant,modern,cover,https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1113560/library_600x900.jpg,
+700078,Darksiders Warmastered Edition,classic,cover,steam-search:Darksiders Warmastered Edition,Darksiders Warmastered Edition
+700079,Darksiders II Deathinitive Edition,classic,cover,steam-search:Darksiders II Deathinitive Edition,Darksiders II Deathinitive Edition
+700082,Resident Evil 0,classic,cover,steam-search:Resident Evil 0,Resident Evil 0
+700083,Resident Evil 5,classic,cover,steam-search:Resident Evil 5,Resident Evil 5
+700084,Resident Evil 6,classic,cover,steam-search:Resident Evil 6,Resident Evil 6
+700085,Resident Evil Village,modern,cover,steam-search:Resident Evil Village,Resident Evil Village
+700086,SILENT HILL 2,modern,cover,steam-search:SILENT HILL 2,SILENT HILL 2
+700087,Alien: Isolation,classic,cover,steam-search:Alien: Isolation,Alien: Isolation
+700088,Until Dawn,modern,cover,steam-search:Until Dawn,Until Dawn
+700089,The Quarry,modern,cover,steam-search:The Quarry,The Quarry
+700091,The Wolf Among Us,classic,cover,steam-search:The Wolf Among Us,The Wolf Among Us
+700092,Heavy Rain,modern,cover,steam-search:Heavy Rain,Heavy Rain
+700093,Beyond: Two Souls,modern,cover,steam-search:Beyond: Two Souls,Beyond: Two Souls
+700094,Life is Strange,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/319630/library_600x900.jpg,
+700095,Life is Strange: Before the Storm,modern,cover,steam-search:Life is Strange: Before the Storm,Life is Strange: Before the Storm
+700096,Life is Strange 2,modern,cover,steam-search:Life is Strange 2,Life is Strange 2
+700097,Life is Strange: True Colors,modern,cover,steam-search:Life is Strange: True Colors,Life is Strange: True Colors
+700098,Firewatch,modern,cover,steam-search:Firewatch,Firewatch
+700099,The Stanley Parable: Ultra Deluxe,modern,cover,steam-search:The Stanley Parable: Ultra Deluxe,The Stanley Parable: Ultra Deluxe
+700100,Donut County,modern,cover,steam-search:Donut County,Donut County
+700101,Untitled Goose Game,modern,cover,steam-search:Untitled Goose Game,Untitled Goose Game
+700102,Katamari Damacy REROLL,modern,cover,steam-search:Katamari Damacy REROLL,Katamari Damacy REROLL
+700103,A Short Hike,modern,cover,steam-search:A Short Hike,A Short Hike
+700104,ABZU,modern,cover,steam-search:ABZU,ABZU
+700105,GRIS,modern,cover,steam-search:GRIS,GRIS
+700106,TUNIC,modern,cover,steam-search:TUNIC,TUNIC
+700107,Cocoon,modern,cover,steam-search:Cocoon,Cocoon
+700108,Viewfinder,modern,cover,steam-search:Viewfinder,Viewfinder
+700109,DUSK,modern,cover,steam-search:DUSK,DUSK
+700110,ULTRAKILL,modern,cover,steam-search:ULTRAKILL,ULTRAKILL
+700111,Prodeus,modern,cover,steam-search:Prodeus,Prodeus
+700112,SIGNALIS,modern,cover,steam-search:SIGNALIS,SIGNALIS
+700113,Inscryption,modern,cover,steam-search:Inscryption,Inscryption
+700114,Slay the Spire,modern,cover,steam-search:Slay the Spire,Slay the Spire
+700115,FTL: Faster Than Light,modern,cover,steam-search:FTL: Faster Than Light,FTL: Faster Than Light
+700116,Into the Breach,modern,cover,steam-search:Into the Breach,Into the Breach
+700117,Factorio,modern,cover,steam-search:Factorio,Factorio
+700118,Satisfactory,modern,cover,steam-search:Satisfactory,Satisfactory
+700119,RimWorld,modern,cover,steam-search:RimWorld,RimWorld
+700120,Frostpunk,modern,cover,steam-search:Frostpunk,Frostpunk
+700121,This War of Mine,modern,cover,steam-search:This War of Mine,This War of Mine
+700122,Crusader Kings III,modern,cover,steam-search:Crusader Kings III,Crusader Kings III
+700123,Europa Universalis IV,modern,cover,steam-search:Europa Universalis IV,Europa Universalis IV
+700124,Hearts of Iron IV,modern,cover,steam-search:Hearts of Iron IV,Hearts of Iron IV
+700125,Stellaris,modern,cover,steam-search:Stellaris,Stellaris
+700126,Kerbal Space Program,modern,cover,steam-search:Kerbal Space Program,Kerbal Space Program
+700127,Microsoft Flight Simulator,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1250410/library_600x900.jpg,
+700128,PAYDAY 2,classic,cover,steam-search:PAYDAY 2,PAYDAY 2
+700129,Sea of Thieves,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1172620/library_600x900.jpg,
+700130,Fall Guys,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1097150/library_600x900.jpg,
+700131,Phasmophobia,modern,cover,steam-search:Phasmophobia,Phasmophobia
+700132,Content Warning,modern,cover,steam-search:Content Warning,Content Warning
+700133,DayZ,modern,cover,steam-search:DayZ,DayZ
+700134,No Man's Sky,modern,cover,steam-search:No Man's Sky,No Man's Sky
+700135,Elite Dangerous,modern,cover,steam-search:Elite Dangerous,Elite Dangerous
+700136,The Elder Scrolls Online,modern,cover,steam-search:The Elder Scrolls Online,The Elder Scrolls Online
+700137,Warframe,modern,cover,steam-search:Warframe,Warframe
+700138,Destiny 2,modern,cover,steam-search:Destiny 2,Destiny 2
+700139,Borderlands 2,classic,cover,steam-search:Borderlands 2,Borderlands 2
+700140,Borderlands 3,modern,cover,steam-search:Borderlands 3,Borderlands 3
+700141,Gears 5,modern,cover,steam-search:Gears 5,Gears 5
+700142,Battlefield 4,modern,cover,steam-search:Battlefield 4,Battlefield 4
+700143,Battlefield 1,modern,cover,steam-search:Battlefield 1,Battlefield 1
+700144,Titanfall 2,modern,cover,steam-search:Titanfall 2,Titanfall 2
+700145,Crysis Remastered,modern,cover,steam-search:Crysis Remastered,Crysis Remastered
+700146,Far Cry 6,modern,cover,steam-search:Far Cry 6,Far Cry 6
+700147,Call of Duty: WWII,modern,cover,steam-search:Call of Duty: WWII,Call of Duty: WWII
+700148,FINAL FANTASY VII,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/39140/library_600x900.jpg,
+700149,FINAL FANTASY XV WINDOWS EDITION,modern,cover,steam-search:FINAL FANTASY XV WINDOWS EDITION,FINAL FANTASY XV WINDOWS EDITION
+700150,FINAL FANTASY VII REMAKE INTERGRADE,modern,cover,steam-search:FINAL FANTASY VII REMAKE INTERGRADE,FINAL FANTASY VII REMAKE INTERGRADE
+700151,Persona 3 Reload,modern,cover,steam-search:Persona 3 Reload,Persona 3 Reload
+700152,Persona 4 Golden,modern,cover,steam-search:Persona 4 Golden,Persona 4 Golden
+700153,Persona 5 Royal,modern,cover,steam-search:Persona 5 Royal,Persona 5 Royal
+700154,DRAGON QUEST XI S: Echoes of an Elusive Age - Definitive Edition,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1295510/library_600x900.jpg,
+700155,OCTOPATH TRAVELER,modern,cover,steam-search:OCTOPATH TRAVELER,OCTOPATH TRAVELER
+700156,OCTOPATH TRAVELER II,modern,cover,steam-search:OCTOPATH TRAVELER II,OCTOPATH TRAVELER II
+700157,CHRONO TRIGGER,classic,cover,steam-search:CHRONO TRIGGER,CHRONO TRIGGER
+700158,Path of Exile 2,modern,cover,steam-search:Path of Exile 2,Path of Exile 2
+700159,Diablo IV,modern,cover,steam-search:Diablo IV,Diablo IV
+700160,Monster Hunter: World,modern,cover,steam-search:Monster Hunter: World,Monster Hunter: World
+700161,MONSTER HUNTER RISE,modern,cover,steam-search:MONSTER HUNTER RISE,MONSTER HUNTER RISE
+700162,Palworld,modern,cover,steam-search:Palworld,Palworld
+700163,Dead Cells,modern,cover,steam-search:Dead Cells,Dead Cells
+700164,Risk of Rain 2,modern,cover,steam-search:Risk of Rain 2,Risk of Rain 2
+700165,Hades II,modern,cover,steam-search:Hades II,Hades II
+700166,HELLDIVERS 2,modern,cover,steam-search:HELLDIVERS 2,HELLDIVERS 2
+700167,Ghostrunner,modern,cover,steam-search:Ghostrunner,Ghostrunner
+700168,Spelunky 2,modern,cover,steam-search:Spelunky 2,Spelunky 2
+700169,The Binding of Isaac: Rebirth,modern,cover,steam-search:The Binding of Isaac: Rebirth,The Binding of Isaac: Rebirth
+700170,Tetris Effect: Connected,modern,cover,steam-search:Tetris Effect: Connected,Tetris Effect: Connected
+700171,The Witness,modern,cover,steam-search:The Witness,The Witness
+700172,The Talos Principle,classic,cover,steam-search:The Talos Principle,The Talos Principle
+700173,Baba Is You,modern,cover,steam-search:Baba Is You,Baba Is You
+700174,Gorogoa,modern,cover,steam-search:Gorogoa,Gorogoa
+700175,Rez Infinite,modern,cover,steam-search:Rez Infinite,Rez Infinite
+413410,Danganronpa: Trigger Happy Havoc,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/413410/library_600x900.jpg,
+413420,Danganronpa 2: Goodbye Despair,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/413420/library_600x900.jpg,
+567640,Danganronpa V3: Killing Harmony,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/567640/library_600x900.jpg,
+700180,Zero Escape: The Nonary Games,modern,cover,steam-search:Zero Escape: The Nonary Games,Zero Escape: The Nonary Games
+700181,The Sims 4,modern,cover,steam-search:The Sims 4,The Sims 4
+700182,Plants vs. Zombies GOTY Edition,classic,cover,steam-search:Plants vs. Zombies GOTY Edition,Plants vs. Zombies GOTY Edition
+700183,Geometry Dash,modern,cover,steam-search:Geometry Dash,Geometry Dash
+700184,Bendy and the Ink Machine,modern,cover,steam-search:Bendy and the Ink Machine,Bendy and the Ink Machine
+700185,Dead by Daylight,modern,cover,steam-search:Dead by Daylight,Dead by Daylight
+700186,Dying Light,classic,cover,steam-search:Dying Light,Dying Light
+700187,Dying Light 2 Stay Human,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/534380/library_600x900.jpg,
+700188,Dead Island Definitive Edition,classic,cover,steam-search:Dead Island Definitive Edition,Dead Island Definitive Edition
+700189,Dead Rising 2,classic,cover,steam-search:Dead Rising 2,Dead Rising 2
+700190,The Outlast Trials,modern,cover,steam-search:The Outlast Trials,The Outlast Trials
+700191,Middle-earth: Shadow of Mordor,classic,cover,steam-search:Middle-earth: Shadow of Mordor,Middle-earth: Shadow of Mordor
+700192,Middle-earth: Shadow of War,modern,cover,steam-search:Middle-earth: Shadow of War,Middle-earth: Shadow of War
+700193,Dishonored,classic,cover,steam-search:Dishonored,Dishonored
+700194,Dishonored 2,modern,cover,steam-search:Dishonored 2,Dishonored 2
+700195,Deus Ex: Human Revolution - Director's Cut,classic,cover,https://cdn.akamai.steamstatic.com/steam/apps/238010/library_600x900.jpg,
+700196,Deus Ex: Mankind Divided,modern,cover,steam-search:Deus Ex: Mankind Divided,Deus Ex: Mankind Divided
+700197,STAR WARS Jedi: Fallen Order,modern,cover,steam-search:STAR WARS Jedi: Fallen Order,STAR WARS Jedi: Fallen Order
+700198,STAR WARS Jedi: Survivor,modern,cover,steam-search:STAR WARS Jedi: Survivor,STAR WARS Jedi: Survivor
+700199,Darkest Dungeon,classic,cover,steam-search:Darkest Dungeon,Darkest Dungeon
+700200,The Surge 2,modern,cover,steam-search:The Surge 2,The Surge 2
+1599660,Sackboy: A Big Adventure,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1599660/library_600x900.jpg,
+2668510,Red Dead Redemption,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/2668510/library_600x900.jpg,
+698780,Doki Doki Literature Club!,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/698780/library_600x900.jpg,
+541570,Sally Face,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/541570/library_600x900.jpg,
+99998801,The Last of Us Part II,modern,cover,https://s3.us-east-1.amazonaws.com/product-image-bucket-prod-us/327555-Product-0-I-637237610467702197.jpg,
+99998802,Astro Bot,modern,cover,https://images.fravega.com/f1000/51a2fa9d4825a78cccf8a973446e7296.jpg,
+99998803,Minecraft,classic,cover,https://images.cgames.de/images/gamestar/4/minecraft_2359472.jpg,
+1903340,Clair Obscur: Expedition 33,modern,cover,https://cdn.akamai.steamstatic.com/steam/apps/1903340/library_600x900.jpg,
+700201,Roblox,modern,cover,https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b4/d9/fc/b4d9fc91-b318-ab14-4d2c-f6e067afb081/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/1024x1024wd.png,

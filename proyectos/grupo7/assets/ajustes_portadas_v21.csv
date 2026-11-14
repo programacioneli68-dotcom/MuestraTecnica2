@@ -1,0 +1,32 @@
+﻿id,juego,recorte_superior_porcentaje,recorte_inferior_porcentaje,motivo
+15100,Assassin’s Creed,11.5,0,Cabecera Xbox 360
+12210,Grand Theft Auto IV,7,7,Bordes negros superior e inferior
+700083,Resident Evil 5,5.5,0,Borde negro superior
+2668510,Red Dead Redemption,0,0,REVISAR visualmente; no recortar automaticamente
+99998801,The Last of Us Part II,11.5,0,Cabecera PS4
+99998802,Astro Bot,11.5,0,Cabecera PS5
+99998803,Minecraft,11.5,0,Cabecera Windows
+99999001,God of War,11.5,0,Franja de consola PlayStation
+99999002,God of War II,11.5,0,Franja de consola PlayStation
+99999003,God of War III,11.5,0,Franja de consola PlayStation
+99999101,inFAMOUS,11.5,0,Franja de consola PlayStation
+99999102,inFAMOUS 2,11.5,0,Franja de consola PlayStation
+99999103,inFAMOUS: Second Son,11.5,0,Franja de consola PlayStation
+99999201,Twisted Metal,11.5,0,Franja de consola PlayStation
+99999202,Twisted Metal: Black,11.5,0,Franja de consola PlayStation
+99999301,LittleBigPlanet,11.5,0,Franja de consola PlayStation
+99999302,LittleBigPlanet 2,11.5,0,Franja de consola PlayStation
+99999303,LittleBigPlanet 3,11.5,0,Franja de consola PlayStation
+99999401,Ratchet & Clank,11.5,0,Franja de consola PlayStation
+99999402,Ratchet & Clank: Going Commando,11.5,0,Franja de consola PlayStation
+99999403,Ratchet & Clank: Up Your Arsenal,11.5,0,Franja de consola PlayStation
+99999501,Jak and Daxter: The Precursor Legacy,11.5,0,Franja de consola PlayStation
+99999502,Jak II,11.5,0,Franja de consola PlayStation
+99999503,Jak 3,11.5,0,Franja de consola PlayStation
+99999601,Sly Cooper and the Thievius Raccoonus,11.5,0,Franja de consola PlayStation
+99999602,Sly 2: Band of Thieves,11.5,0,Franja de consola PlayStation
+99999603,Sly 3: Honor Among Thieves,11.5,0,Franja de consola PlayStation
+99999604,Sly Cooper: Thieves in Time,11.5,0,Franja de consola PlayStation
+99999701,Uncharted: Drake’s Fortune,11.5,0,Franja de consola PlayStation
+99999702,Uncharted 2: Among Thieves,11.5,0,Franja de consola PlayStation
+99999703,Uncharted 3: Drake’s Deception,11.5,0,Franja de consola PlayStation
