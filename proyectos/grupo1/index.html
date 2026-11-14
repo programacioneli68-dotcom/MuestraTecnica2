@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ahorcado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Encabezado -->
+    <header>
+      <h1>Ahorcado</h1>
+      <div class="tools">
+        <button class="icon-btn" id="btn-sound" aria-label="Activar o silenciar sonido" title="Sonido">🔊</button>
+        <button class="icon-btn" id="btn-theme" aria-label="Cambiar tema claro u oscuro" title="Tema">🌓</button>
+      </div>
+    </header>
+
+    <!-- Puntajes -->
+    <div class="stats">
+      <div class="stat"><b id="score">0</b><span>Puntos</span></div>
+      <div class="stat"><b id="streak">0</b><span>Racha</span></div>
+      <div class="stat"><b id="best">0</b><span>Récord</span></div>
+    </div>
+
+    <!-- Categorías (se generan desde script.js) -->
+    <div class="cats" id="cats" role="group" aria-label="Categoría"></div>
+
+    <div class="board">
+
+      <!-- Dibujo del ahorcado -->
+      <div class="gallows">
+        <div class="lives" id="lives" aria-live="polite"></div>
+        <svg viewBox="0 0 240 260" role="img" aria-label="Dibujo del ahorcado">
+          <!-- Estructura fija -->
+          <line class="fixed" x1="20" y1="240" x2="150" y2="240" />
+          <line class="fixed" x1="60" y1="240" x2="60" y2="20" />
+          <line class="fixed" x1="60" y1="20" x2="170" y2="20" />
+          <line class="fixed" x1="170" y1="20" x2="170" y2="50" />
+          <!-- Partes del cuerpo (aparecen con cada error) -->
+          <circle class="part" pathLength="1" cx="170" cy="75" r="25" />
+          <line class="part" pathLength="1" x1="170" y1="100" x2="170" y2="165" />
+          <line class="part" pathLength="1" x1="170" y1="115" x2="140" y2="145" />
+          <line class="part" pathLength="1" x1="170" y1="115" x2="200" y2="145" />
+          <line class="part" pathLength="1" x1="170" y1="165" x2="146" y2="205" />
+          <line class="part" pathLength="1" x1="170" y1="165" x2="194" y2="205" />
+        </svg>
+      </div>
+
+      <!-- Palabra, teclado y botones -->
+      <div>
+        <p class="hint" id="hint"></p>
+        <div class="word" id="word" aria-live="polite"></div>
+        <div class="keyboard" id="keyboard"></div>
+        <div class="actions">
+          <button class="btn" id="btn-help">💡 Pista (−15 pts)</button>
+          <button class="btn" id="btn-skip">Otra palabra</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="footer">
+      Podés jugar con el teclado de tu computadora. Cada error dibuja una parte; tenés 6 vidas.
+    </p>
+  </div>
+
+  <!-- Ventana de fin de partida -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="modal">
+      <h2 id="modal-title"></h2>
+      <div>La palabra era</div>
+      <div class="modal-word" id="modal-word"></div>
+      <div id="modal-msg"></div>
+      <br>
+      <button class="btn primary" id="btn-next">Siguiente palabra</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

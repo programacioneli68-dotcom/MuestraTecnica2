@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la canción</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <button id="themeToggle" class="theme-toggle" type="button">
+            ☀️ Modo claro
+        </button>
+
+        <!-- PANTALLA DE INICIO -->
+        <section id="welcome" class="welcome">
+
+            <div class="music-icon">♫</div>
+
+            <p class="eyebrow">JUEGO MUSICAL</p>
+
+            <h1>Adivina la canción</h1>
+
+            <p class="intro">
+                Escuchá un fragmento, elegí la respuesta correcta
+                y sumá puntos.
+            </p>
+
+            <div class="rules">
+                <span>🎧 Fragmentos musicales</span>
+                <span>🎯 5 rondas</span>
+                <span>🏆 1 punto por acierto</span>
+            </div>
+
+            <p class="intro">
+                Elegí tus géneros musicales antes de comenzar.
+            </p>
+
+            <button id="start" type="button">
+                <p id=loadingMessage></p>
+                Elegir géneros →
+            </button>
+
+        </section>
+
+
+        <!-- PANTALLA DEL JUEGO -->
+        <section id="game" class="game hidden">
+
+            <header class="game-header">
+
+                <div>
+                    <p class="eyebrow">JUEGO MUSICAL</p>
+                    <h1>Adivina la canción</h1>
+                    <p id="genreLabel" class="genre-label"></p>
+                </div>
+
+                <div class="stats">
+
+                    <div class="pill">
+                        Puntos: <strong id="score">0</strong>
+                    </div>
+
+                    <div class="pill">
+                        Ronda: <strong id="round">1</strong>/5
+                    </div>
+
+                </div>
+
+            </header>
+
+            <h2>¿Qué canción está sonando?</h2>
+
+            <div class="game-layout">
+
+                <div class="audio-card">
+
+                    <img id="cover" class="cover" src="" alt="Portada">
+
+                    <audio id="player" controls preload="none"></audio>
+
+                    <p id="audioHint">
+                        Tocá reproducir para escuchar el fragmento.
+                    </p>
+
+                </div>
+
+                <div class="answers-area">
+
+                    <p class="answers-title">
+                        Elegí una de estas opciones:
+                    </p>
+
+                    <div id="answers" class="answers"></div>
+
+                </div>
+
+            </div>
+
+            <div class="feedback-row">
+
+                <p id="status">Elegí una opción.</p>
+
+                <button id="next" disabled>
+                    Siguiente →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PANTALLA FINAL -->
+        <section id="finished" class="finished hidden">
+
+            <div class="music-icon">★</div>
+
+            <p class="eyebrow">RESULTADO FINAL</p>
+
+            <h1>¡Terminaste!</h1>
+
+            <p id="finalScore" class="final-score"></p>
+
+            <p id="finalMessage" class="intro"></p>
+
+            <button id="restart" type="button">
+                Elegir otros géneros
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

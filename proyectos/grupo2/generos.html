@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegí tus géneros musicales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <main class="app">
+
+        <button id="themeToggle" class="theme-toggle" type="button">
+            ☀️ Modo claro
+        </button>
+
+        <section class="genre-page">
+
+            <div class="music-icon">♫</div>
+
+            <p class="eyebrow">PERSONALIZÁ TU PARTIDA</p>
+
+            <h1>Elegí tus géneros</h1>
+
+            <p class="intro">
+                Podés elegir un solo estilo o combinar varios
+                para crear tu propio juego.
+            </p>
+
+            <div class="genre-section">
+
+                <h2>Géneros musicales</h2>
+
+                <div class="genre-grid">
+
+                    <button class="genre-option" data-genre="Rock" type="button">
+                        <span>🎸</span>
+                        Rock
+                    </button>
+
+                    <button class="genre-option" data-genre="Urbana" type="button">
+                        <span>🎤</span>
+                        Urbana
+                    </button>
+
+                    <button class="genre-option" data-genre="Reggaetón" type="button">
+                        <span>🔥</span>
+                        Reggaetón
+                    </button>
+
+                    <button class="genre-option" data-genre="Bachata" type="button">
+                        <span>💃</span>
+                        Bachata
+                    </button>
+
+                    <button class="genre-option" data-genre="Cumbia" type="button">
+                        <span>🪇</span>
+                        Cumbia
+                    </button>
+
+                    <button class="genre-option" data-genre="Pop" type="button">
+                        <span>🎧</span>
+                        Pop
+                    </button>
+
+                    <button class="genre-option" data-genre="Trap" type="button">
+                        <span>🎵</span>
+                        Trap
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="genre-section all-genres-section">
+
+                <h2>Combinaciones</h2>
+
+                <button id="allGenres" class="all-genres-button" type="button">
+                    🌎 Todos los géneros
+                </button>
+
+                <p class="selection-info">
+                    Podés marcar varios estilos al mismo tiempo.
+                </p>
+
+            </div>
+
+            <div class="selected-box">
+
+                <p>Géneros seleccionados:</p>
+
+                <div id="selectedGenres" class="selected-genres">
+                    Ninguno seleccionado
+                </div>
+
+            </div>
+
+            <p id="genreMessage" class="genre-message">
+                Seleccioná al menos un género para continuar.
+            </p>
+
+            <div class="genre-actions">
+
+                <button id="clearGenres" class="secondary-button" type="button">
+                    Limpiar selección
+                </button>
+
+                <button id="playGenres" type="button" disabled>
+                    ¡Jugar! →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

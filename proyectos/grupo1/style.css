@@ -1,0 +1,435 @@
+/* ---------- 1. Variables ---------- */
+:root {
+  --bg: #ffffff;
+  --ink: #101828;
+  --muted: #5b6577;
+  --line: #d9dee8;
+  --card: #f6f8fc;
+  --key: #ffffff;
+  --accent: #1d4ed8;
+  --accent-ink: #ffffff;
+  --ok: #15803d;
+  --ok-bg: #dcfce7;
+  --bad: #b91c1c;
+  --bad-bg: #fee2e2;
+
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Tema oscuro automático (según el sistema) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1220;
+    --ink: #f1f5f9;
+    --muted: #9aa6ba;
+    --line: #26324a;
+    --card: #121b2e;
+    --key: #17233b;
+    --accent: #6c9bff;
+    --accent-ink: #0b1220;
+    --ok: #4ade80;
+    --ok-bg: #12361f;
+    --bad: #f87171;
+    --bad-bg: #3b1616;
+    color-scheme: dark;
+  }
+}
+
+/* Tema oscuro manual (botón 🌓) */
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --ink: #f1f5f9;
+  --muted: #9aa6ba;
+  --line: #26324a;
+  --card: #121b2e;
+  --key: #17233b;
+  --accent: #6c9bff;
+  --accent-ink: #0b1220;
+  --ok: #4ade80;
+  --ok-bg: #12361f;
+  --bad: #f87171;
+  --bad-bg: #3b1616;
+  color-scheme: dark;
+}
+
+
+/* ---------- 2. Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font: clamp(15px, 1.6vw, 18px) / 1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 28px);
+}
+
+
+/* ---------- 3. Encabezado y puntajes ---------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font: 700 clamp(1.8rem, 5vw, 3rem) / 1 Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+
+.tools {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  font-size: 1.15rem;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.stat {
+  flex: 1 1 90px;
+  padding: 8px 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.stat b {
+  display: block;
+  font: 700 1.5rem / 1.2 Georgia, serif;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+
+/* ---------- 4. Categorías ---------- */
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  padding: 7px 16px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+
+/* ---------- 5. Tablero y dibujo ---------- */
+.board {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: clamp(12px, 3vw, 32px);
+  align-items: center;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallows {
+  position: relative;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 46vh;
+}
+
+svg line,
+svg circle {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.fixed {
+  stroke: var(--muted);
+}
+
+/* Las partes del cuerpo se "dibujan" animando el trazo */
+.part {
+  stroke: var(--ink);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.part.on {
+  stroke-dashoffset: 0;
+}
+
+.lives {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.lives.low {
+  color: var(--bad);
+}
+
+
+/* ---------- 6. Palabra y teclado ---------- */
+.hint {
+  margin: 0 0 4px;
+  color: var(--muted);
+}
+
+.word {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(5px, 1.2vw, 10px);
+  min-height: 3.4rem;
+  margin: 8px 0 18px;
+}
+
+.slot {
+  display: grid;
+  place-items: center;
+  width: clamp(34px, 7vw, 58px);
+  height: clamp(46px, 9vw, 72px);
+  border-bottom: 4px solid var(--ink);
+  font: 700 clamp(1.7rem, 5vw, 3rem) / 1 Georgia, serif;
+}
+
+.slot span {
+  animation: pop 0.35s ease;
+}
+
+.slot.gap {
+  width: clamp(14px, 3vw, 26px);
+  border: 0;
+}
+
+.slot.missed {
+  color: var(--bad);
+  border-color: var(--bad);
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.key {
+  flex: 1 1 0;
+  max-width: 52px;
+  height: clamp(42px, 6.5vw, 54px);
+  background: var(--key);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 2px 0 var(--line);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.key:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.key:disabled {
+  cursor: default;
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.key.ok {
+  background: var(--ok-bg);
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.key.no {
+  background: var(--bad-bg);
+  border-color: var(--bad);
+  color: var(--bad);
+  animation: shake 0.3s;
+}
+
+@keyframes pop {
+  from { transform: translateY(-14px) scale(0.6); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@keyframes shake {
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+
+/* ---------- 7. Botones ---------- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  padding: 10px 18px;
+  background: var(--card);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.footer {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+
+/* ---------- 8. Ventana final y confeti ---------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 15, 30, 0.55);
+}
+
+.overlay.show {
+  display: grid;
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  text-align: center;
+  animation: pop 0.35s ease;
+}
+
+.modal h2 {
+  margin: 0 0 8px;
+  font: 700 2rem / 1.1 Georgia, serif;
+}
+
+.modal.win h2  { color: var(--ok); }
+.modal.lose h2 { color: var(--bad); }
+
+.modal-word {
+  margin: 8px 0 18px;
+  font: 700 1.8rem Georgia, serif;
+  letter-spacing: 0.08em;
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 30;
+  width: 10px;
+  height: 14px;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(720deg); }
+}
+
+
+/* ---------- 9. Accesibilidad ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
