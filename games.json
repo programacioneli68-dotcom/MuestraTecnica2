@@ -69,14 +69,4 @@
     "categoria": "Juegos",
     "enabled": true
   }
-  {
-    "grupo": 7,
-    "titulo": "Trivia de VideoJuegos",
-    "descripcion": "Elegí uno de los cuatro juegos para comenzar. Cada modalidad tiene su propio desafío y ranking.",
-    "integrantes": ["Maxi Ugarnes","Luciano Trebucq"],
-    "img": "trivia.png",
-    "link": "proyectos/grupo7/index.html",
-    "categoria": "Juegos",
-    "enabled": true
-  }
-]
+  ]
