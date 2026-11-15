@@ -51,7 +51,7 @@
   },
   {
     "grupo": 6,
-    "titulo": "Quien es el Pockemon",
+    "titulo": "Quien es el Pokemon",
     "descripcion": "Adivina el Pokemon y gana puntos por cada acierto, tambien podes comprar en la tienda.",
     "integrantes": ["Daniel Monhaiser","Tobias Villalba"],
     "img": "pokemon1.png",
@@ -61,8 +61,8 @@
   },
   {
     "grupo": 7,
-    "titulo": "Quien es el Personaje",
-    "descripcion": "Te animas a adivinar el Personaje de videoJuegos.",
+    "titulo": "Trivia de VideoJuegos",
+    "descripcion": "Elegí uno de los cuatro juegos para comenzar. Cada modalidad tiene su propio desafío y ranking.",
     "integrantes": ["Maxi Ugarnes","Luciano Trebucq"],
     "img": "trivia.png",
     "link": "proyectos/grupo7/index.html",
