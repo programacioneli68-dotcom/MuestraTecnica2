@@ -51,7 +51,7 @@
   },
   {
     "grupo": 6,
-    "titulo": "Quien es el Pokemon",
+    "titulo": "Quien es este Pokemon",
     "descripcion": "Adivina el Pokemon y gana puntos por cada acierto, tambien podes comprar en la tienda.",
     "integrantes": ["Daniel Monhaiser","Tobias Villalba"],
     "img": "pokemon1.png",
